@@ -12,7 +12,11 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
+
 1. [Requirements](#requirements)
+  Random Puppy for image urls
+  Faker for other data
+
 1. [Development](#development)
 
 ## Usage
