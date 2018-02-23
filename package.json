@@ -16,6 +16,8 @@
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "mongoose": "^5.0.6",
+    "random-ext": "^2.6.1",
+    "random-puppy": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
