@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const attr = require('../attraction.js');
+const { Attraction } = require('../attraction.js');
 const faker = require('faker');
-const helpers = require('./helpers.js');
+const { calculateRating, totalReviews } = require('./helpers.js');
 const getPuppies = require('./puppy.js');
 const random = require('random-ext');
 
@@ -10,8 +10,8 @@ mongoose.connect('mongodb://localhost/overview');
 const generateSingle = async (i) => {
   const ratings = [random.integer(100, 0), random.integer(100, 0),
     random.integer(100, 0), random.integer(100, 0), random.integer(100, 0)];
-  const rating = helpers.rating(ratings);
-  const reviews = helpers.reviews(ratings);
+  const rating = calculateRating(ratings);
+  const reviews = totalReviews(ratings);
   const randomName = faker.random.words();
   const name = `${randomName} National Park`;
   const puppies = await getPuppies();
@@ -55,7 +55,7 @@ const seedDatabase = () => {
       let count = 0;
 
       data.forEach((obj) => {
-        const attraction = new attr.Attraction(obj);
+        const attraction = new Attraction(obj);
         attraction.save((err) => {
           if (err) {
             console.log('Error saving doc to db', err);

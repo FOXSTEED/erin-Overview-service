@@ -1,5 +1,5 @@
 module.exports = {
-  rating: (arr) => {
+  calculateRating: (arr) => {
     let num = 0;
     let denom = 0;
 
@@ -12,7 +12,7 @@ module.exports = {
     return result;
   },
 
-  reviews: (arr) => {
+  totalReviews: (arr) => {
     let sum = 0;
     for (let i = 0; i < arr.length; i += 1) {
       sum += arr[i];
