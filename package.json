@@ -9,13 +9,16 @@
   },
   "scripts": {
     "dev": "webpack -d --watch",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "seed": "node seed-db.js"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "mongoose": "^5.0.6",
+    "random-ext": "^2.6.1",
+    "random-puppy": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
