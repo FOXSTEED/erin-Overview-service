@@ -49,12 +49,14 @@ const seedDatabase = () => {
     const item = generateSingle(i);
     promises.push(item);
   }
+
   Promise.all(promises)
     .then((data) => {
-      let count = 0
+      let count = 0;
+
       data.forEach((obj) => {
-        let attraction = new attr.Attraction(obj);
-        attraction.save((err, doc) => {
+        const attraction = new attr.Attraction(obj);
+        attraction.save((err) => {
           if (err) {
             console.log('Error saving doc to db', err);
           } else {
