@@ -1,9 +1,9 @@
 const puppy = require('random-puppy');
 
 const getPuppies = async () => {
-  let one = await puppy();
-  let two = await puppy();
-  let three = await puppy();
+  const one = await puppy();
+  const two = await puppy();
+  const three = await puppy();
 
   return [one, two, three];
 };

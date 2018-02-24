@@ -1,17 +1,19 @@
 const mongoose = require('mongoose');
 const { Attraction } = require('../attraction.js');
 const faker = require('faker');
-const { calculateRating, totalReviews } = require('./helpers.js');
+const { calculateAverageRating, totalNumberOfReviews } = require('./helpers.js');
 const getPuppies = require('./puppy.js');
 const random = require('random-ext');
 
 mongoose.connect('mongodb://localhost/overview');
 
 const generateSingle = async (i) => {
+  // ratings array contains numbers of ratings per star amount as follows: 
+  // [5-stars, 4-stars, 3-stars, 2-stars, 1-star]
   const ratings = [random.integer(100, 0), random.integer(100, 0),
     random.integer(100, 0), random.integer(100, 0), random.integer(100, 0)];
-  const rating = calculateRating(ratings);
-  const reviews = totalReviews(ratings);
+  const rating = calculateAverageRating(ratings);
+  const reviews = totalNumberOfReviews(ratings);
   const randomName = faker.random.words();
   const name = `${randomName} National Park`;
   const puppies = await getPuppies();
