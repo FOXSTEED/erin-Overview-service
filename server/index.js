@@ -1,6 +1,15 @@
 const express = require('express');
-const app = express(); 
+const mongoose = require('mongoose');
+const router = require('./routes.js');
 
-app.listen(1337, () => {
-  console.log('Listening on port 1337 ...');
+const app = express();
+
+mongoose.connect('mongodb://localhost/overview');
+
+app.use(express.static(`${__dirname}/../client/public`));
+app.use('/attractions', router);
+
+app.listen(3002, () => {
+  console.log('Listening on port 3002 ...');
 });
+
