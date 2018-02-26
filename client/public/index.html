@@ -1,1 +1,19 @@
 <!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="overview"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="http://localhost:3002/bundle.js"></script>
+    <script>
+      ReactDOM.render(
+        React.createElement(Overview),
+        document.getElementById('overview')
+      );
+    </script>
+  </body>
+</html>
