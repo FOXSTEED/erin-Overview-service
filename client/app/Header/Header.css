@@ -1,6 +1,27 @@
-.headerContainer {
+.topContainer {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.firstRowItem {
+  margin: 0px 20px 0px 0px;
+}
+
+.rowItem {
+  margin: 0px 20px
+}
+
+.saveContainer {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1; 
+  justify-content: flex-end;
 }
 
 .test {
