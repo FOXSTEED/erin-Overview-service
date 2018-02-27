@@ -5,7 +5,7 @@ const BUILD_DIR = path.resolve(__dirname, 'client/public');
 const APP_DIR = path.resolve(__dirname, 'client/app');
 
 const config = {
-  entry: `${APP_DIR}/Overview/Overview.jsx`,
+  entry: `${APP_DIR}/Overview (Main)/Overview.jsx`,
   module: {
     loaders: [
       {

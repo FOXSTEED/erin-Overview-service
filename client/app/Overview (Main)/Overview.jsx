@@ -5,6 +5,7 @@ import styles from './Overview.css';
 import Header from '../Header/Header.jsx';
 import Bookings from '../Bookings/Bookings.jsx';
 import Photos from '../Photos/Photos.jsx';
+import Body from '../Body/Body.jsx';
 
 class Overview extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class Overview extends React.Component {
           <Bookings />
           <Photos />
         </div>
+        <Body />
       </div>
     );
   }
