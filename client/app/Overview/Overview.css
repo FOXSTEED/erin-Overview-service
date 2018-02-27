@@ -1,0 +1,8 @@
+.mainContainer {
+  padding: 24px;
+}
+
+.bookPhotoContainer {
+  display: flex;
+  flex-direction: row;
+}

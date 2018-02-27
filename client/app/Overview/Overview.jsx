@@ -1,7 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-import Header from './Header/Header.jsx';
+import styles from './Overview.css';
+import Header from '../Header/Header.jsx';
+import Bookings from '../Bookings/Bookings.jsx';
+import Photos from '../Photos/Photos.jsx';
 
 class Overview extends React.Component {
   constructor(props) {
@@ -21,10 +24,16 @@ class Overview extends React.Component {
 
   render() {
     return (
-      <div>
-        { this.state.data &&
-        <Header attr={this.state.data} />
-        }
+      <div className={styles.mainContainer}>
+        <div>
+          { this.state.data &&
+          <Header attr={this.state.data} />
+          }
+        </div>
+        <div className={styles.bookPhotoContainer}>
+          <Bookings />
+          <Photos />
+        </div>
       </div>
     );
   }
