@@ -10,7 +10,8 @@ module.exports = {
   extends: 'airbnb',
   rules: {
     'no-console': 'off',
-    'import/extensions': 'always'
+    'import/extensions': 'always',
+    "react/forbid-prop-types": 'off'
   },
   env: {
     "browser": true,
