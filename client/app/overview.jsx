@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import Header from './Header.jsx';
+import Header from './Header/Header.jsx';
 
 class Overview extends React.Component {
   constructor(props) {
@@ -22,7 +22,9 @@ class Overview extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        { this.state.data &&
+        <Header attr={this.state.data} />
+        }
       </div>
     );
   }

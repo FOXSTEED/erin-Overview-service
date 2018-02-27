@@ -9,7 +9,8 @@
 module.exports = {
   extends: 'airbnb',
   rules: {
-    'no-console': 'off'
+    'no-console': 'off',
+    'import/extensions': 'always'
   },
   env: {
     "browser": true,
