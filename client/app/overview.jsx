@@ -6,21 +6,21 @@ class Overview extends React.Component {
     super(props);
 
     this.state = {
-      data: 'test',
+      data: null,
     };
   }
 
   componentDidMount() {
     // :id hardcoded at the moment
     axios.get('http://localhost:3002/attractions/0/overview')
-      .then(res => console.log(res))
+      .then(res => this.setState({ data: res.data }))
       .catch(err => console.log(err));
   }
 
   render() {
     return (
       <div>
-        Hello WORLD! {this.state.data}
+        Hello WORLD!
       </div>
     );
   }
