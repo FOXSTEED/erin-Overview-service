@@ -3,7 +3,7 @@
   width: 100%;
   list-style: none;
   padding: 0;
-
+  color: #4a4a4a;
 }
 
 .chartRow {
@@ -29,4 +29,5 @@
 
 .num {
   text-align: right;
+  color: #767676;
 }

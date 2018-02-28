@@ -12,7 +12,7 @@ const RatingsColumn = ({ ratings, rating, reviews }) => (
       <span>*Bubbles*</span>
       <a className={styles.reviews}>{reviews}</a>
     </div>
-    <RatingsChart ratings={ratings} />
+    <RatingsChart ratings={ratings} reviews={reviews} />
     <TalkAbout />
   </div>
 );
