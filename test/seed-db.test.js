@@ -15,6 +15,16 @@ describe('helper functions', () => {
     overall = helpers.calculateAverageRating(ratings);
     expect(overall).toEqual(2);
   });
+
+  test('Calculates total number of reviews', () => {
+    let ratings = [300, 100, 60, 30, 30];
+    let total = helpers.totalNumberOfReviews(ratings);
+    expect(total).toEqual(520);
+
+    ratings = [300, 5000, 60, 30, 30];
+    total = helpers.totalNumberOfReviews(ratings);
+    expect(total).toEqual(5420);
+  });
 });
 
 describe('Seeding of database', () => {
