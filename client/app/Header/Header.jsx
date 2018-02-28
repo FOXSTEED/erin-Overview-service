@@ -7,7 +7,8 @@ const Header = ({ attr }) => (
   <div className={styles.topContainer}>
     <h1>{attr.name}</h1>
     <div className={styles.row}>
-      <div className={styles.firstRowItem}>{attr.reviews} Reviews</div>
+      <div className={styles.firstRowItem} >**Bubbles**</div>
+      <div className={styles.rowItem}>{attr.reviews} Reviews</div>
       <div className={styles.rowItem}>#{attr.cityRating} of {attr.cityAttractions} things to do in {attr.address.split(',')[1]}</div>
       <div className={styles.rowItem}>{attr.category}</div>
     </div>
