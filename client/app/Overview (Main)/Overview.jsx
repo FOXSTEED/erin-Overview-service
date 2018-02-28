@@ -52,7 +52,7 @@ class Overview extends React.Component {
           <Bookings />
           <Photos />
         </div>
-        <h1>Overview</h1>
+        <h1 className={styles.bodyTitle}>Overview</h1>
         { this.state.data &&
           <Body attr={this.state.data} rating={this.state.overallRating} />
         }
