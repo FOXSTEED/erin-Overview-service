@@ -8,3 +8,50 @@
 .section {
   margin: 12px 20px;
 }
+
+.clock {
+  margin-right: 8px;
+}
+
+.open {
+  font-weight: bold;
+  margin-right: 8px;
+  padding-right: 8px;
+  border-right: 1px solid #d6d6d6;
+
+}
+
+a {
+  color: #006699;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hoursToday {
+  padding-left: 24px;
+}
+
+.duration {
+  margin-top: 15px
+}
+
+.middle {
+  padding: 20px 0;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #767676;
+}
+
+.addContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
