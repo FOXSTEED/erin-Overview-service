@@ -1,0 +1,14 @@
+.mainContainer {
+  padding: 24px;
+}
+
+.bookPhotoContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.bodyTitle {
+  border-bottom: 1px dotted #d6d6d6;
+  margin-bottom: 25px;
+  padding: 24px;
+}

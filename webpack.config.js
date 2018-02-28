@@ -5,7 +5,7 @@ const BUILD_DIR = path.resolve(__dirname, 'client/public');
 const APP_DIR = path.resolve(__dirname, 'client/app');
 
 const config = {
-  entry: `${APP_DIR}/Overview.jsx`,
+  entry: `${APP_DIR}/Overview (Main)/Overview.jsx`,
   module: {
     loaders: [
       {
@@ -15,6 +15,17 @@ const config = {
         query: {
           presets: ['es2015', 'react'],
         },
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader'
+      }, {
+        test: /\.css$/,
+        loader: 'css-loader',
+        query: {
+          modules: true,
+          localIdentName: '[name]__[local]___[hash:base64:5]'
+        }
       },
     ],
   },
