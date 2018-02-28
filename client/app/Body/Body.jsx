@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Body.css';
+import RatingsChart from '../RatingsChart/RatingsChart.jsx';
 
 const Body = ({ attr, rating }) => (
   <div className={styles.mainContainer}>
@@ -10,9 +11,12 @@ const Body = ({ attr, rating }) => (
       <div className={styles.subContainer}>
 
         <div className={styles.column}>
-          <div>
-            <span>{rating}</span><span>Bubbles</span><span>{attr.reviews}</span>
+          <div className={styles.ratingContainer}>
+            <span className={styles.rating}>{rating}</span>
+            <span>*Bubbles*</span>
+            <a className={styles.reviews}>{attr.reviews}</a>
           </div>
+          <RatingsChart />
         </div>
 
         <div className={styles.column}>Text</div>

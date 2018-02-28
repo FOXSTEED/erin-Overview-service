@@ -1,0 +1,27 @@
+.chart {
+  display: table;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+
+}
+
+.chartRow {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+}
+
+.word {
+  width: 25%;
+}
+
+.bar {
+  width: 60%
+}
+
+.num {
+  text-align: right;
+}

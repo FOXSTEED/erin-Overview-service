@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  padding: 0 15px 0 0;
 }
 
 .desc {
@@ -33,7 +34,27 @@
   border-top: 1px dotted #d6d6d6;
 }
 
-/* .ratingsTop {
+.ratingContainer {
   display: flex;
   flex-direction: row;
-} */
+}
+
+.rating {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: Arial;
+  color: #00a680;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1; 
+  justify-content: flex-end;
+  color: #069;
+}
+
+.reviews:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

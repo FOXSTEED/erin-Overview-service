@@ -37,7 +37,7 @@ class Overview extends React.Component {
       formatted += 0.5;
     }
     console.log(formatted);
-    this.setState({ rating: formatted });
+    this.setState({ overallRating: formatted });
   }
 
   render() {
@@ -54,7 +54,7 @@ class Overview extends React.Component {
         </div>
         <h1>Overview</h1>
         { this.state.data &&
-          <Body attr={this.state.data} rating={this.state.rating}/>
+          <Body attr={this.state.data} rating={this.state.overallRating} />
         }
       </div>
     );

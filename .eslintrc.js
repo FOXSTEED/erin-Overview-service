@@ -11,7 +11,8 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'import/extensions': 'always',
-    "react/forbid-prop-types": 'off'
+    'react/forbid-prop-types': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
   },
   env: {
     "browser": true,
