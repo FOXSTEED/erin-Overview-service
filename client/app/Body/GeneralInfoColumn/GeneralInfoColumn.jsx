@@ -24,7 +24,18 @@ const GeneralInfoColumn = props => (
         <div>Full address will be very long should go here make sure this text is long enough</div>
       </div>
     </div>
-    <div className={styles.section}>Contact</div>
+    <div className={styles.section}>
+      <div className={styles.title}>CONTACT</div>
+      <div className={styles.addContainer}>
+        <div className={styles.clock}>**</div>
+        <a className={styles.websiteBuff}>Website</a>
+        <div className={styles.clock}>**</div>
+        <div>555-555-5555</div>
+      </div>
+      <div className={styles.improve}>
+        <a>Improve This Listing</a>
+      </div>
+    </div>
   </div>
 );
 

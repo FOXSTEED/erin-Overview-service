@@ -7,6 +7,7 @@
 
 .section {
   margin: 12px 20px;
+  color: #2c2c2c;
 }
 
 .clock {
@@ -54,4 +55,14 @@ a:hover {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
+}
+
+.websiteBuff {
+  padding-right: 60px;
+}
+
+.improve {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
 }
