@@ -39,8 +39,8 @@ describe('Seeding of database', () => {
     });
   });
 
-  test('A doc should contain 3 photo urls', (done) => {
-    expect.assertions(9);
+  test('A doc should contain 4 photo urls', (done) => {
+    expect.assertions(12);
     Attraction.findOne((err, doc) => {
       if (err) {
         console.log('ERR retrieving doc', err);

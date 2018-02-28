@@ -29,6 +29,7 @@ const generateSingle = async (i) => {
     photos: [{ url: puppies[0], comment: faker.lorem.sentence(), user: faker.internet.userName() },
       { url: puppies[1], comment: faker.lorem.sentence(), user: faker.internet.userName() },
       { url: puppies[2], comment: faker.lorem.sentence(), user: faker.internet.userName() },
+      { url: puppies[3], comment: faker.lorem.sentence(), user: faker.internet.userName() },
     ],
     rating,
     ratingBreakdowns: ratings,
