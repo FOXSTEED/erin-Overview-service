@@ -5,18 +5,22 @@ import RatingsChart from './RatingsChart/RatingsChart.jsx';
 import TalkAbout from './TalkAbout/TalkAbout.jsx';
 import styles from './RatingsColumn.css';
 
-const RatingsColumn = props => (
+const RatingsColumn = ({ ratings, rating, reviews }) => (
   <div className={[styles.column, styles.c1].join(' ')}>
     <div className={styles.ratingContainer}>
-      <span className={styles.rating}>rating</span>
+      <span className={styles.rating}>{rating}</span>
       <span>*Bubbles*</span>
-      <a className={styles.reviews}>reviews num</a>
+      <a className={styles.reviews}>{reviews}</a>
     </div>
-    <RatingsChart />
+    <RatingsChart ratings={ratings} />
     <TalkAbout />
   </div>
 );
 
-RatingsColumn.propTypes = {};
+RatingsColumn.propTypes = {
+  ratings: PropTypes.array.isRequired,
+  rating: PropTypes.number.isRequired,
+  reviews: PropTypes.number.isRequired,
+};
 
 export default RatingsColumn;

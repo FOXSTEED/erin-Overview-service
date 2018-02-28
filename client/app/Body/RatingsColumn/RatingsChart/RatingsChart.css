@@ -10,6 +10,11 @@
   display: table-row;
 }
 
+.chartRow:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .cell {
   display: table-cell;
 }
