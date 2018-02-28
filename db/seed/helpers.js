@@ -11,7 +11,8 @@ module.exports = {
     }
 
     const result = Math.ceil(num / denom);
-    return result;
+    const overallRating = result / 2;
+    return overallRating;
   },
 
   totalNumberOfReviews: (arr) => {

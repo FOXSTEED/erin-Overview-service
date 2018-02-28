@@ -1,8 +1,21 @@
 /* eslint no-undef: "off" */
+const helpers = require('../db/seed/helpers.js')
 const { Attraction } = require('../db/attraction.js');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/overview');
+
+describe('helper functions', () => {
+  test('Calculates correct overall rating', () => {
+    let ratings = [300, 100, 60, 30, 30]; 
+    let overall = helpers.calculateAverageRating(ratings);
+    expect(overall).toEqual(4.5);
+
+    ratings = [30, 30, 60, 200, 300];
+    overall = helpers.calculateAverageRating(ratings);
+    expect(overall).toEqual(2);
+  });
+});
 
 describe('Seeding of database', () => {
   test('Should contain 200 items', (done) => {
