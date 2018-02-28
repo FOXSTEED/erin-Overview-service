@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost/overview');
 const generateSingle = async (i) => {
   // ratings array contains numbers of ratings per star amount as follows: 
   // [5-stars, 4-stars, 3-stars, 2-stars, 1-star]
-  const ratings = [random.integer(100, 0), random.integer(100, 0),
+  const ratings = [random.integer(200, 0), random.integer(100, 0),
     random.integer(100, 0), random.integer(100, 0), random.integer(100, 0)];
   const rating = calculateAverageRating(ratings);
   const reviews = totalNumberOfReviews(ratings);
@@ -21,7 +21,7 @@ const generateSingle = async (i) => {
   return {
     id: i,
     name,
-    description: faker.lorem.sentence(),
+    description: faker.lorem.sentences(),
     address: faker.fake('{{address.streetAddress}}, {{address.city}}, {{address.state}}, {{address.country}}'),
     phone: faker.phone.phoneNumberFormat(),
     website: faker.internet.url(),
@@ -34,9 +34,9 @@ const generateSingle = async (i) => {
     rating,
     ratingBreakdowns: ratings,
     reviews,
-    pplTalkAbout: [{ phrase: faker.random.words() },
-      { phrase: faker.random.words() },
-      { phrase: faker.random.words() }],
+    pplTalkAbout: [{ avatar: faker.image.avatar(), phrase: faker.random.words(), mentions: random.integer(100, 1) },
+      { avatar: faker.image.avatar(), phrase: faker.random.words(), mentions: random.integer(100, 1) },
+      { avatar: faker.image.avatar(), phrase: faker.random.words(), mentions: random.integer(100, 1) }],
     cityRating: random.integer(50, 1),
     cityAttractions: random.integer(500, 100),
     category: faker.random.words(),
