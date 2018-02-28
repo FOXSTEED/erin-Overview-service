@@ -1,0 +1,16 @@
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #767676;
+}
+
+.keywords {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.keywordRow {
+  display: flex;
+  flex-direction: row;
+}

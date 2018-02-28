@@ -1,0 +1,10 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0 15px 0 0;
+}
+
+.section {
+  margin: 12px 20px;
+}
