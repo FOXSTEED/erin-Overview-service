@@ -14,13 +14,30 @@ class Overview extends React.Component {
     this.state = {
       data: null,
     };
+
+    this.formatRating = this.formatRating.bind(this);
   }
 
   componentDidMount() {
     // :id hardcoded at the moment
     axios.get('http://localhost:3002/attractions/0/overview')
-      .then(res => this.setState({ data: res.data }))
+      .then(res => this.setState({ data: res.data }, () => {
+        console.log(this);
+        this.formatRating(this.state.data.rating);
+      }))
       .catch(err => console.log(err));
+  }
+
+  formatRating(num) {
+    let formatted = null;
+    if (num % 2 === 0) {
+      formatted = num / 2;
+    } else {
+      formatted = (num - 1) / 2;
+      formatted += 0.5;
+    }
+    console.log(formatted);
+    this.setState({ rating: formatted });
   }
 
   render() {
@@ -35,7 +52,10 @@ class Overview extends React.Component {
           <Bookings />
           <Photos />
         </div>
-        <Body />
+        <h1>Overview</h1>
+        { this.state.data &&
+          <Body attr={this.state.data} rating={this.state.rating}/>
+        }
       </div>
     );
   }

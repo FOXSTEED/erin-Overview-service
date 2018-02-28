@@ -1,7 +1,7 @@
 .mainContainer {
   display: flex;
   flex-direction: row;
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 .infoContainer {
@@ -15,3 +15,25 @@
   border: 2px solid red;
   min-height: 340px;
 }
+
+.subContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.desc {
+  padding: 25px 0;
+  border-bottom: 1px dotted #d6d6d6;
+  border-top: 1px dotted #d6d6d6;
+}
+
+/* .ratingsTop {
+  display: flex;
+  flex-direction: row;
+} */
