@@ -12,7 +12,7 @@ const attrSchema = mongoose.Schema({
   rating: Number,
   ratingBreakdowns: [Number, Number, Number, Number, Number],
   reviews: Number,
-  pplTalkAbout: [{ phrase: String }],
+  pplTalkAbout: [{ avatar: String, phrase: String, mentions: Number }],
   cityRating: Number,
   cityAttractions: Number,
   category: String,

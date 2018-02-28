@@ -13,12 +13,12 @@ const Body = ({ attr, rating }) => (
     <div className={styles.infoContainer}>
       <div className={styles.desc}>{attr.description} NOTE: MAKE THESE LONGER</div>
       <div className={styles.colContainer}>
-        <RatingsColumn 
+        <RatingsColumn
           rating={rating}
           reviews={attr.reviews}
           ratings={attr.ratingBreakdowns}
         />
-        <GeneralInfoColumn 
+        <GeneralInfoColumn
           duration={attr.duration}
           address={attr.address}
           phone={attr.phone}
