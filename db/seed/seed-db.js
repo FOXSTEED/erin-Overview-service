@@ -8,7 +8,7 @@ const random = require('random-ext');
 mongoose.connect('mongodb://localhost/overview');
 
 const generateSingle = async (i) => {
-  // ratings array contains numbers of ratings per star amount as follows: 
+  // ratings array contains numbers of ratings per star amount as follows:
   // [5-stars, 4-stars, 3-stars, 2-stars, 1-star]
   const ratings = [random.integer(200, 0), random.integer(100, 0),
     random.integer(100, 0), random.integer(100, 0), random.integer(100, 0)];
@@ -34,9 +34,23 @@ const generateSingle = async (i) => {
     rating,
     ratingBreakdowns: ratings,
     reviews,
-    pplTalkAbout: [{ avatar: faker.image.avatar(), phrase: faker.random.words(), mentions: random.integer(100, 1) },
-      { avatar: faker.image.avatar(), phrase: faker.random.words(), mentions: random.integer(100, 1) },
-      { avatar: faker.image.avatar(), phrase: faker.random.words(), mentions: random.integer(100, 1) }],
+    pplTalkAbout: [
+      {
+        avatar: faker.image.avatar(),
+        phrase: faker.random.words(),
+        mentions: random.integer(100, 1),
+      },
+      {
+        avatar: faker.image.avatar(),
+        phrase: faker.random.words(),
+        mentions: random.integer(100, 1),
+      },
+      {
+        avatar: faker.image.avatar(),
+        phrase: faker.random.words(),
+        mentions: random.integer(100, 1),
+      },
+    ],
     cityRating: random.integer(50, 1),
     cityAttractions: random.integer(500, 100),
     category: faker.random.words(),
@@ -75,3 +89,12 @@ const seedDatabase = () => {
 };
 
 seedDatabase();
+
+// exports.generateSingle = generateSingle;
+
+// const test = async () => {
+//   const doc = await generateSingle(0);
+//   console.log(doc);
+// };
+
+// test();

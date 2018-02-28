@@ -53,5 +53,20 @@ describe('Seeding of database', () => {
       done();
     });
   });
+
+  test('A doc should contain 3 avatar urls', (done) => {
+    expect.assertions(9);
+    Attraction.findOne((err, doc) => {
+      if (err) {
+        console.log('ERR retrieving doc', err);
+      }
+      doc.pplTalkAbout.forEach((obj) => {
+        expect(obj).toHaveProperty('avatar');
+        expect(typeof obj.avatar).toBe('string');
+        expect(obj.avatar).toEqual(expect.stringContaining('twitter'));
+      });
+      done();
+    });
+  });
 });
 
