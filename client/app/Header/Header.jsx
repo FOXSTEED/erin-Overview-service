@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Header.css';
+import Bubbles from '../Bubbles/Bubbles.jsx';
 
 const Header = ({ attr }) => (
   <div className={styles.topContainer}>
     <h1>{attr.name}</h1>
     <div className={styles.row}>
-      <div className={styles.firstRowItem} >**Bubbles**</div>
+      <div className={styles.firstRowItem} >
+        <Bubbles rating={attr.rating} />
+      </div>
       <div className={[styles.rowItem, styles.decor].join(' ')}>{attr.reviews} Reviews</div>
       <div className={styles.rowItem}>
         #{attr.cityRating} of {attr.cityAttractions} <span className={styles.decor}>things to do in {attr.address.split(',')[1]}</span>
