@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './GeneralInfoColumn.css';
 
-const GeneralInfoColumn = ({ duration, address, phone }) => (
+const GeneralInfoColumn = ({ duration, address, phone, opens, closes }) => (
   <div className={styles.column}>
     <div className={styles.section}>
       <div>
@@ -11,7 +11,7 @@ const GeneralInfoColumn = ({ duration, address, phone }) => (
         <span className={styles.open}>OPEN?</span>
         <a>All Hours</a>
       </div>
-      <div className={styles.hoursToday}>Hours Today: needs updating!</div>
+      <div className={styles.hoursToday}>Hours Today: {opens}am - {closes}pm</div>
       <div className={styles.duration}>
         <span className={styles.clock}>**</span>
         <span>Suggested Duration: {duration}</span>
@@ -43,6 +43,8 @@ GeneralInfoColumn.propTypes = {
   duration: PropTypes.string,
   address: PropTypes.string,
   phone: PropTypes.string,
+  opens: PropTypes.number,
+  closes: PropTypes.number,
 };
 
 export default GeneralInfoColumn;

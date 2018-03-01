@@ -16,7 +16,8 @@ const attrSchema = mongoose.Schema({
   cityRating: Number,
   cityAttractions: Number,
   category: String,
-  hours: String,
+  opens: Number,
+  closes: Number,
   duration: String,
 });
 
