@@ -21,7 +21,7 @@ const Header = ({ attr }) => (
       <div className={[styles.rowItem, styles.decor].join(' ')}>Email</div>
       <div className={styles.saveContainer}>
         <div>*heart btn*</div>
-        <div>Save</div>
+        <div className={styles.save}>Save</div>
       </div>
     </div>
   </div>);
