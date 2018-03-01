@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.bubbles{
+  margin-right: 3px;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -13,7 +17,10 @@
 }
 
 .rowItem {
-  margin: 0px 20px;
+  padding: 0px 20px;
+  border-width: 0 0 0 1px;
+  border-style: solid;
+  border-color: #e5e5e5;
 }
 
 .decor:hover {
@@ -30,4 +37,8 @@
 
 .save {
   font-size: 20px;
+}
+
+.bold {
+  font-weight: bold;
 }

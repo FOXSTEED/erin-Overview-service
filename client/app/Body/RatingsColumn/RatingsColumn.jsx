@@ -10,8 +10,8 @@ const RatingsColumn = ({ ratings, rating, reviews, talkAbout }) => (
   <div className={[styles.column, styles.c1].join(' ')}>
     <div className={styles.ratingContainer}>
       <span className={styles.rating}>{rating}</span>
-      <Bubbles rating={rating} />
-      <a className={styles.reviews}>{reviews}</a>
+      <Bubbles rating={rating} height={30} width={30} />
+      <a className={styles.reviews}>{reviews} reviews</a>
     </div>
     <RatingsChart ratings={ratings} reviews={reviews} />
     <TalkAbout talkAbout={talkAbout} />

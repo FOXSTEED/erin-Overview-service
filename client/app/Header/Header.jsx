@@ -8,12 +8,12 @@ const Header = ({ attr }) => (
   <div className={styles.topContainer}>
     <h1>{attr.name}</h1>
     <div className={styles.row}>
-      <div className={styles.firstRowItem} >
-        <Bubbles rating={attr.rating} />
+      <div className={styles.bubbles} >
+        <Bubbles rating={attr.rating} height={16} width={16} />
       </div>
-      <div className={[styles.rowItem, styles.decor].join(' ')}>{attr.reviews} Reviews</div>
+      <div className={[styles.firstRowItem, styles.decor].join(' ')}>{attr.reviews} Reviews</div>
       <div className={styles.rowItem}>
-        #{attr.cityRating} of {attr.cityAttractions} <span className={styles.decor}>things to do in {attr.address.split(',')[1]}</span>
+        <span className={styles.bold}>#{attr.cityRating}</span> of {attr.cityAttractions} <span className={styles.decor}>things to do in {attr.address.split(',')[1]}</span>
       </div>
       <div className={styles.rowItem}>Category: <span className={styles.decor}>{attr.category}</span></div>
     </div>
