@@ -17,6 +17,7 @@ const Body = ({ attr, rating }) => (
           rating={rating}
           reviews={attr.reviews}
           ratings={attr.ratingBreakdowns}
+          talkAbout={attr.pplTalkAbout}
         />
         <GeneralInfoColumn
           duration={attr.duration}
