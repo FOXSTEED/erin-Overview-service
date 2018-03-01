@@ -23,6 +23,8 @@ const Body = ({ attr, rating }) => (
           duration={attr.duration}
           address={attr.address}
           phone={attr.phone}
+          opens={attr.opens}
+          closes={attr.closes}
         />
       </div>
     </div>
