@@ -11,7 +11,7 @@ const Body = ({ attr, rating }) => (
   <div className={styles.mainContainer}>
 
     <div className={styles.infoContainer}>
-      <div className={styles.desc}>{attr.description} NOTE: MAKE THESE LONGER</div>
+      <div className={styles.desc}>{attr.description}</div>
       <div className={styles.colContainer}>
         <RatingsColumn
           rating={rating}
