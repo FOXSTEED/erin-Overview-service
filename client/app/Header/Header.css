@@ -16,6 +16,11 @@
   margin: 0px 20px
 }
 
+.decor:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .saveContainer {
   display: flex;
   flex-direction: row;
