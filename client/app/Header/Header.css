@@ -13,7 +13,12 @@
 }
 
 .rowItem {
-  margin: 0px 20px
+  margin: 0px 20px;
+}
+
+.decor:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .saveContainer {
@@ -23,6 +28,6 @@
   justify-content: flex-end;
 }
 
-.test {
-  background-color: blueviolet;
+.save {
+  font-size: 20px;
 }
