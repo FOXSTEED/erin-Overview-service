@@ -17,13 +17,13 @@ const Header = ({ attr }) => (
       </div>
       <div className={styles.rowItem}>Category: <span className={styles.decor}>{attr.category}</span></div>
     </div>
-    <div className={styles.row}>
-      <div className={[styles.firstRowItem, styles.decor].join(' ')}>{attr.address}</div>
-      <div className={styles.rowItem}>{attr.phone}</div>
-      <div className={[styles.rowItem, styles.decor].join(' ')}>Website</div>
-      <div className={[styles.rowItem, styles.decor].join(' ')}>Email</div>
+    <div className={[styles.row, styles.secondRow].join(' ')}>
+      <div className={[styles.firstRowItem, styles.decor].join(' ')}><span className={['glyphicon glyphicon-map-marker', styles.icon].join(' ')} />{attr.address}</div>
+      <div className={styles.rowItem}><span className={['glyphicon glyphicon-earphone', styles.icon].join(' ')} />{attr.phone}</div>
+      <div className={[styles.rowItem, styles.decor].join(' ')}><span className={['glyphicon glyphicon-globe', styles.icon].join(' ')} />Website</div>
+      <div className={[styles.rowItem, styles.decor].join(' ')}><span className={['glyphicon glyphicon-envelope', styles.icon].join(' ')} />Email</div>
       <div className={styles.saveContainer}>
-        <div>*heart btn*</div>
+        <span className={['glyphicon glyphicon-heart-empty', styles.heart].join(' ')} />
         <div className={styles.save}>Save</div>
       </div>
     </div>

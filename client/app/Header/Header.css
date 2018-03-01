@@ -5,6 +5,7 @@
 
 .bubbles{
   margin-right: 3px;
+  align-items: center;
 }
 
 .row {
@@ -12,7 +13,11 @@
   flex-direction: row;
 }
 
-.firstRowItem {
+.secondRow {
+  align-items: center;
+}
+
+.firstRowItem { 
   margin: 0px 20px 0px 0px;
 }
 
@@ -31,14 +36,31 @@
 .saveContainer {
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex-grow: 1; 
   justify-content: flex-end;
 }
 
 .save {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .bold {
   font-weight: bold;
+}
+
+.icon {
+  color: #00a680;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.heart {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.heart:hover {
+  color: red;
+  cursor: pointer;
 }
