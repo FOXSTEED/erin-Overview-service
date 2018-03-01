@@ -24,6 +24,12 @@ img {
   box-shadow: inset 0 0 6px 0 rgba(0,0,0,0.1);
 }
 
+.text {
+  position: relative;
+  top: 5px;
+  padding: 1px 0;
+}
+
 .phrase {
   padding-left: 40px;
   padding-right: 5px;
