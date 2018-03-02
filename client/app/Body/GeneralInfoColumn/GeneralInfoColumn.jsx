@@ -7,29 +7,29 @@ const GeneralInfoColumn = ({ duration, address, phone, opens, closes }) => (
   <div className={styles.column}>
     <div className={styles.section}>
       <div>
-        <span className={styles.clock}>**</span>
+        <span className={['glyphicon glyphicon-time', styles.icon].join(' ')} />
         <span className={styles.open}>OPEN?</span>
         <a>All Hours</a>
       </div>
       <div className={styles.hoursToday}>Hours Today: {opens}am - {closes}pm</div>
       <div className={styles.duration}>
-        <span className={styles.clock}>**</span>
+        <span className={['glyphicon glyphicon-refresh', styles.icon].join(' ')} />
         <span>Suggested Duration: {duration}</span>
       </div>
     </div>
     <div className={[styles.section, styles.middle].join(' ')}>
       <div className={styles.title}>LOCATION</div>
       <div className={styles.addContainer}>
-        <div className={styles.clock}>**</div>
+        <span className={['glyphicon glyphicon-map-marker', styles.icon].join(' ')} />
         <div>{address}</div>
       </div>
     </div>
     <div className={styles.section}>
       <div className={styles.title}>CONTACT</div>
       <div className={styles.addContainer}>
-        <div className={styles.clock}>**</div>
+        <span className={['glyphicon glyphicon-globe', styles.icon].join(' ')} />
         <a className={styles.websiteBuff}>Website</a>
-        <div className={styles.clock}>**</div>
+        <span className={['glyphicon glyphicon-earphone', styles.icon].join(' ')} />
         <div>{phone}</div>
       </div>
       <div className={styles.improve}>

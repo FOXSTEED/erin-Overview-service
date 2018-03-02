@@ -3,17 +3,29 @@
   flex-direction: column;
 }
 
+.bubbles{
+  margin-right: 3px;
+  align-items: center;
+}
+
 .row {
   display: flex;
   flex-direction: row;
 }
 
-.firstRowItem {
+.secondRow {
+  align-items: center;
+}
+
+.firstRowItem { 
   margin: 0px 20px 0px 0px;
 }
 
 .rowItem {
-  margin: 0px 20px;
+  padding: 0px 20px;
+  border-width: 0 0 0 1px;
+  border-style: solid;
+  border-color: #e5e5e5;
 }
 
 .decor:hover {
@@ -24,10 +36,31 @@
 .saveContainer {
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex-grow: 1; 
   justify-content: flex-end;
 }
 
 .save {
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.icon {
+  color: #00a680;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.heart {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.heart:hover {
+  color: red;
+  cursor: pointer;
 }
