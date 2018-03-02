@@ -30,7 +30,7 @@ const Body = ({ attr, rating }) => (
     </div>
 
     <div className={styles.mapContainer}>
-      <Map />
+      <Map location={attr.address.split(',')[3]} />
     </div>
 
   </div>
