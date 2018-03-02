@@ -13,14 +13,34 @@ class Overview extends React.Component {
 
     this.state = {
       data: null,
+      currentlyOpen: null,
     };
+
+    this.determineIfOpen = this.determineIfOpen.bind(this);
   }
 
   componentDidMount() {
     // :id hardcoded at the moment
     axios.get('http://localhost:3002/attractions/0/overview')
-      .then(res => this.setState({ data: res.data }))
+      .then(res => this.setState({ data: res.data }, () => {
+        this.determineIfOpen(this.state.data.opens, this.state.data.closes);
+      }))
       .catch(err => console.log(err));
+  }
+
+  determineIfOpen(opens, closes) {
+    // get current time
+    const date = new Date();
+    const time = date.getHours();
+    const closesMilitaryTime = closes + 12;
+    // check if in range
+    if (time >= opens && time < closesMilitaryTime) {
+      // if so, true
+      this.setState({ currentlyOpen: true });
+    } else {
+      // if not false
+      this.setState({ currentlyOpen: false });
+    }
   }
 
   render() {
@@ -37,7 +57,11 @@ class Overview extends React.Component {
         </div>
         <h1 className={styles.bodyTitle}>Overview</h1>
         { this.state.data &&
-          <Body attr={this.state.data} rating={this.state.data.rating} />
+          <Body
+            attr={this.state.data}
+            rating={this.state.data.rating}
+            open={this.state.currentlyOpen}
+          />
         }
       </div>
     );
