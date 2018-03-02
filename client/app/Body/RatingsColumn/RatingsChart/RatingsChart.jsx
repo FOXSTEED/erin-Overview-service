@@ -3,34 +3,37 @@ import PropTypes from 'prop-types';
 
 import styles from './RatingsChart.css';
 
-const RatingsChart = ({ ratings, reviews }) => (
-  <ul className={styles.chart}>
-    <li className={styles.chartRow}>
-      <span className={[styles.cell, styles.word].join(' ')} >Excellent</span>
-      <span className={[styles.cell, styles.bar].join(' ')} ><span className={styles.fill} /></span>
-      <span className={[styles.cell, styles.num].join(' ')}>{Math.floor((ratings[0] / reviews) * 100)}%</span>
-    </li>
-    <li className={styles.chartRow}>
-      <span className={[styles.cell, styles.word].join(' ')}>Very Good</span>
-      <span className={[styles.cell, styles.bar].join(' ')} ><span className={styles.fill} /></span>
-      <span className={[styles.cell, styles.num].join(' ')}>{Math.floor((ratings[1] / reviews) * 100)}%</span>
-    </li>
-    <li className={styles.chartRow}>
-      <span className={[styles.cell, styles.word].join(' ')}>Average</span>
-      <span className={[styles.cell, styles.bar].join(' ')} ><span className={styles.fill} /></span>
-      <span className={[styles.cell, styles.num].join(' ')}>{Math.floor((ratings[2] / reviews) * 100)}%</span>
-    </li>
-    <li className={styles.chartRow}>
-      <span className={[styles.cell, styles.word].join(' ')}>Poor</span>
-      <span className={[styles.cell, styles.bar].join(' ')} ><span className={styles.fill} /></span>
-      <span className={[styles.cell, styles.num].join(' ')}>{Math.floor((ratings[3] / reviews) * 100)}%</span>
-    </li>
-    <li className={styles.chartRow}>
-      <span className={[styles.cell, styles.word].join(' ')}>Terrible</span>
-      <span className={[styles.cell, styles.bar].join(' ')} ><span className={styles.fill} /></span>
-      <span className={[styles.cell, styles.num].join(' ')}>{Math.floor((ratings[4] / reviews) * 100)}%</span>
-    </li>
-  </ul>
+const RatingsChart = ({ ratings, reviews }) => {
+  const ratingWords = ['Excellent', 'Very Good', 'Average', 'Poor', 'Terrible'];
+  let max = 0;
+  let indexOfMax = null;
+
+  ratings.forEach((rating, i) => {
+    if (rating > max) {
+      max = rating;
+      indexOfMax = i;
+    }
+  });
+
+  return (
+    <ul className={styles.chart}>
+      {ratings.map((rating, index) => (
+        <ChartRow
+          percentage={Math.floor((rating / reviews) * 100)}
+          ratingWord={ratingWords[index]}
+          max={index === indexOfMax}
+        />
+      ))}
+    </ul>
+  );
+};
+
+const ChartRow = ({ percentage, ratingWord, max }) => (
+  <li className={styles.chartRow}>
+    <span className={[styles.cell, styles.word].join(' ')} style={max ? { color: '#00a680' } : {}}>{ratingWord}</span>
+    <span className={[styles.cell, styles.bar].join(' ')}><span className={styles.fill} style={{ width: `${percentage}%` }} /></span>
+    <span className={[styles.cell, styles.num].join(' ')}>{percentage}%</span>
+  </li>
 );
 
 RatingsChart.propTypes = {
@@ -38,5 +41,10 @@ RatingsChart.propTypes = {
   reviews: PropTypes.number.isRequired,
 };
 
+ChartRow.propTypes = {
+  percentage: PropTypes.number.isRequired,
+  ratingWord: PropTypes.string.isRequired,
+  max: PropTypes.bool,
+};
+
 export default RatingsChart;
-  

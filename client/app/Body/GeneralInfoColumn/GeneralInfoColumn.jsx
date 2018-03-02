@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 import styles from './GeneralInfoColumn.css';
 
-const GeneralInfoColumn = ({ duration, address, phone, opens, closes }) => (
+const GeneralInfoColumn = ({ duration, address, phone, opens, closes, open }) => (
   <div className={styles.column}>
     <div className={styles.section}>
       <div>
-        <span className={['glyphicon glyphicon-time', styles.icon].join(' ')} />
-        <span className={styles.open}>OPEN?</span>
+        {open ? <span className={['glyphicon glyphicon-time', styles.icon].join(' ')} />
+        : <span className={['glyphicon glyphicon-time', styles.icon, styles.closed].join(' ')} />}
+        {open ? <span className={styles.open}>Open</span>
+        : <span className={styles.open}>Closed</span>}
         <a>All Hours</a>
       </div>
       <div className={styles.hoursToday}>Hours Today: {opens}am - {closes}pm</div>
