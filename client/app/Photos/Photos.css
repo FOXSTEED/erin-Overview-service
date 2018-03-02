@@ -1,7 +1,41 @@
 .photos {
-  border: 2px solid red;
-  width: 66.6666%;
-  min-height: 424px;
+  display: flex;
+  flex-direction: row;
+  min-width: 800px;
+  min-height: 420px;
+  max-width: 800px;
+  max-height: 420px;
   text-align: center;
   margin: 0 0 0 5px;
+}
+
+.main img {
+  min-width: 590px;
+  min-height: 420px;
+  max-width: 590px;
+  max-height: 421px;
+  margin-right: 1px
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  max-height: 590px;
+}
+
+.sidePhoto img {
+  min-width: 250px;
+  min-height: 140px;
+  max-width: 250px;
+  max-height: 140px;
+}
+
+.mid img {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  min-width: 250px;
+  min-height: 139px;
+  max-width: 250px;
+  max-height: 139px;
 }
