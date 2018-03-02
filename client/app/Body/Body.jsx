@@ -7,7 +7,7 @@ import GeneralInfoColumn from './GeneralInfoColumn/GeneralInfoColumn.jsx';
 import Map from './Map/Map.jsx';
 
 
-const Body = ({ attr, rating }) => (
+const Body = ({ attr, rating, open }) => (
   <div className={styles.mainContainer}>
 
     <div className={styles.infoContainer}>
@@ -25,6 +25,7 @@ const Body = ({ attr, rating }) => (
           phone={attr.phone}
           opens={attr.opens}
           closes={attr.closes}
+          open={open}
         />
       </div>
     </div>
@@ -39,6 +40,7 @@ const Body = ({ attr, rating }) => (
 Body.propTypes = {
   attr: PropTypes.object.isRequired,
   rating: PropTypes.number.isRequired,
+  open: PropTypes.bool.isRequired,
 };
 
 export default Body;
