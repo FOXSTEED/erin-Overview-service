@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import map from './maps_api_key.js';
-import styles from './Map.css'
+import styles from './Map.css';
 
 const Map = ({ location }) => (
   <iframe
