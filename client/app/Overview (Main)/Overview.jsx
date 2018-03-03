@@ -53,7 +53,9 @@ class Overview extends React.Component {
         </div>
         <div className={styles.bookPhotoContainer}>
           <Bookings />
-          <Photos />
+          {this.state.data &&
+          <Photos photos={this.state.data.photos} />
+          }
         </div>
         <h1 className={styles.bodyTitle}>Overview</h1>
         { this.state.data &&

@@ -15,7 +15,7 @@
   flex-direction: row;
 }
 
-img {
+.user {
   position: absolute;
   max-height: 30px;
   max-width: 30px;
