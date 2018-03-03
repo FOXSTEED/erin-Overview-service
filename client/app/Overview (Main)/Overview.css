@@ -1,5 +1,6 @@
 .mainContainer {
   padding: 24px;
+  min-width: 1000px;
 }
 
 .bookPhotoContainer {
