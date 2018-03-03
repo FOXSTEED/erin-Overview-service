@@ -1,7 +1,13 @@
 .booking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
   border: 2px solid red;
   min-width: 390px;
   min-height: 420px;
+  max-width: 390px;
+  max-height: 420px;
   text-align: center;
   margin: 0 8px 0 0;
 }

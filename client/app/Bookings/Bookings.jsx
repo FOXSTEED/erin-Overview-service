@@ -3,7 +3,9 @@ import React from 'react';
 import styles from './Bookings.css';
 
 const Bookings = props => (
-  <div className={styles.booking}>Bookings Block</div>
+  <div className={styles.booking}>
+    <div>To advertise here please contact ads@nomadtravel.com</div>
+  </div>
 );
 
 export default Bookings;
