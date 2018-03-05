@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import styles from './Overview.css';
 import Header from '../Header/Header.jsx';
@@ -14,6 +15,7 @@ class Overview extends React.Component {
     this.state = {
       data: null,
       currentlyOpen: null,
+      id: props.id,
     };
 
     this.determineIfOpen = this.determineIfOpen.bind(this);
@@ -21,7 +23,7 @@ class Overview extends React.Component {
 
   componentDidMount() {
     // :id hardcoded at the moment
-    axios.get('http://localhost:3002/attractions/0/overview')
+    axios.get(`http://localhost:3002/attractions/${this.state.id}/overview`)
       .then(res => this.setState({ data: res.data }, () => {
         this.determineIfOpen(this.state.data.opens, this.state.data.closes);
       }))
@@ -70,4 +72,6 @@ class Overview extends React.Component {
   }
 }
 
-window.Overview = Overview;
+Overview.propTypes = {
+  id: PropTypes.number.isRequired,
+};
