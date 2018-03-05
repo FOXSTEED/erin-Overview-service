@@ -15,7 +15,6 @@ class Overview extends React.Component {
     this.state = {
       data: null,
       currentlyOpen: null,
-      id: props.id,
     };
 
     this.determineIfOpen = this.determineIfOpen.bind(this);
@@ -23,7 +22,7 @@ class Overview extends React.Component {
 
   componentDidMount() {
     // :id hardcoded at the moment
-    axios.get(`http://localhost:3002/attractions/${this.state.id}/overview`)
+    axios.get(`http://localhost:3002/attractions/${this.props.id}/overview`)
       .then(res => this.setState({ data: res.data }, () => {
         this.determineIfOpen(this.state.data.opens, this.state.data.closes);
       }))
