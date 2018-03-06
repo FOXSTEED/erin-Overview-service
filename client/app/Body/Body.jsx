@@ -40,7 +40,11 @@ const Body = ({ attr, rating, open }) => (
 Body.propTypes = {
   attr: PropTypes.object.isRequired,
   rating: PropTypes.number.isRequired,
-  open: PropTypes.bool.isRequired,
+  open: PropTypes.bool,
+};
+
+Body.defaultProps = {
+  open: false,
 };
 
 export default Body;

@@ -22,6 +22,7 @@ const RatingsChart = ({ ratings, reviews }) => {
           percentage={Math.floor((rating / reviews) * 100)}
           ratingWord={ratingWords[index]}
           max={index === indexOfMax}
+          key={ratingWords[index]}
         />
       ))}
     </ul>
