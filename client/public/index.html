@@ -12,8 +12,12 @@
     <!-- <script src="bundle.js"></script> -->
     <script src="http://localhost:3002/bundle.js"></script>
     <script>
+      let url = window.location.pathname;
+      url = url.split('/');
+      id = parseInt(url[url.indexOf('listings') + 1]);
+
       ReactDOM.render(
-        React.createElement(Overview),
+        React.createElement(Overview, {id: id}),
         document.getElementById('overview')
       );
     </script>
