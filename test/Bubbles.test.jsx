@@ -9,8 +9,7 @@ import HalfBubble from '../client/app/Bubbles/HalfBubble.jsx';
 import EmptyBubble from '../client/app/Bubbles/EmptyBubble.jsx';
 
 /*
-  What I want to test is that when passed a rating prop
-  of 5, Bubbles renders
+  Test that when passed a rating prop of 5, Bubbles renders
   <span><Bubble /><Bubble /><Bubble /><Bubble /><Bubble /></span>
 
   When rating = 3.5:
