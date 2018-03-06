@@ -1,5 +1,5 @@
 /* eslint no-undef: "off" */
-const helpers = require('../db/seed/helpers.js')
+const helpers = require('../db/seed/helpers.js');
 const { Attraction } = require('../db/attraction.js');
 const mongoose = require('mongoose');
 
@@ -7,7 +7,7 @@ mongoose.connect('mongodb://localhost/overview');
 
 describe('helper functions', () => {
   test('Calculates correct overall rating', () => {
-    let ratings = [300, 100, 60, 30, 30]; 
+    let ratings = [300, 100, 60, 30, 30];
     let overall = helpers.calculateAverageRating(ratings);
     expect(overall).toEqual(4.5);
 
