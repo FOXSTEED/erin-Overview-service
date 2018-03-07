@@ -1,0 +1,36 @@
+module.exports = {
+  id: 1,
+  name: 'Eric',
+  description: 'guitarist',
+  address: '123 San Francisco',
+  phone: '555',
+  website: 'test.com',
+  email: 'test@test',
+  photos: ['photo1', 'photo2', 'photo3'],
+  rating: 5,
+  ratingBreakdowns: [5, 4, 3, 2, 1],
+  reviews: 400,
+  pplTalkAbout: [
+    {
+      avatar: 'avatar',
+      phrase: 'phrase',
+      mentions: 5,
+    },
+    {
+      avatar: 'avatar',
+      phrase: 'phrase',
+      mentions: 5,
+    },
+    {
+      avatar: 'avatar',
+      phrase: 'phrase',
+      mentions: 5,
+    },
+  ],
+  cityRating: 2,
+  cityAttractions: 400,
+  category: 'test category',
+  opens: 9,
+  closes: 1,
+  duration: '4 hours',
+}
