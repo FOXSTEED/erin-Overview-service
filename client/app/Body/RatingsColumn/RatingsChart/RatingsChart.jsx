@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './RatingsChart.css';
+import ChartRow from './ChartRow.jsx';
 
 const RatingsChart = ({ ratings, reviews }) => {
   const ratingWords = ['Excellent', 'Very Good', 'Average', 'Poor', 'Terrible'];
@@ -29,23 +30,9 @@ const RatingsChart = ({ ratings, reviews }) => {
   );
 };
 
-const ChartRow = ({ percentage, ratingWord, max }) => (
-  <li className={styles.chartRow}>
-    <span className={[styles.cell, styles.word].join(' ')} style={max ? { color: '#00a680' } : {}}>{ratingWord}</span>
-    <span className={[styles.cell, styles.bar].join(' ')}><span className={styles.fill} style={{ width: `${percentage}%` }} /></span>
-    <span className={[styles.cell, styles.num].join(' ')}>{percentage}%</span>
-  </li>
-);
-
 RatingsChart.propTypes = {
   ratings: PropTypes.array.isRequired,
   reviews: PropTypes.number.isRequired,
-};
-
-ChartRow.propTypes = {
-  percentage: PropTypes.number.isRequired,
-  ratingWord: PropTypes.string.isRequired,
-  max: PropTypes.bool,
 };
 
 export default RatingsChart;

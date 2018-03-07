@@ -14,10 +14,10 @@ describe('Parent Component', () => {
       .mockReturnValueOnce(23)
       .mockReturnValueOnce(11);
 
-    wrapper.instance().determineIfOpen(9, 1, date);
+    instance.determineIfOpen(9, 1, date);
     expect(instance.state.currentlyOpen).toBe(false);
 
-    wrapper.instance().determineIfOpen(9, 1, date);
+    instance.determineIfOpen(9, 1, date);
     expect(instance.state.currentlyOpen).toBe(true);
   });
 });
