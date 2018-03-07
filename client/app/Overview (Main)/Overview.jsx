@@ -21,16 +21,15 @@ class Overview extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3002/attractions/${this.props.id}/overview`)
+    return axios.get(`http://localhost:3002/attractions/${this.props.id}/overview`)
       .then(res => this.setState({ data: res.data }, () => {
-        this.determineIfOpen(this.state.data.opens, this.state.data.closes);
+        this.determineIfOpen(this.state.data.opens, this.state.data.closes, new Date());
       }))
       .catch(err => console.log(err));
   }
 
-  determineIfOpen(opens, closes) {
+  determineIfOpen(opens, closes, date) {
     // get current time
-    const date = new Date();
     const time = date.getHours();
     const closesMilitaryTime = closes + 12;
     // check if in range
@@ -75,3 +74,4 @@ Overview.propTypes = {
 };
 
 window.Overview = Overview;
+export default Overview;
