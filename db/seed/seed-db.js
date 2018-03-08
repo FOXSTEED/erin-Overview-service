@@ -5,7 +5,7 @@ const { calculateAverageRating, totalNumberOfReviews } = require('./helpers.js')
 const getPuppies = require('./puppy.js');
 const random = require('random-ext');
 
-mongoose.connect('mongodb://localhost/overview');
+mongoose.connect('mongodb://database/overview');
 
 const generateSingle = async (i) => {
   // ratings array contains numbers of ratings per star amount as follows:
