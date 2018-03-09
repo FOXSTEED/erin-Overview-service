@@ -1,3 +1,7 @@
+.container {
+  width: 40%;
+}
+
 .booking {
   display: flex;
   justify-content: center;
@@ -5,9 +9,8 @@
   font-size: 24px;
   border: 2px solid grey;
   min-width: 300px;
-  min-height: 420px;
-  /* max-width: 390px; */
-  max-height: 420px;
+  min-height: 360px;
   text-align: center;
   margin: 0 8px 0 0;
+  width: 100%;
 }

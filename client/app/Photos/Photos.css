@@ -1,42 +1,44 @@
 .photos {
   display: flex;
   flex-direction: row;
-  width: 70%;
   max-width: 830px;
   min-width: 710px;
   text-align: center;
-  margin: 0 8px 0 8px;
+  margin: 0 0 0 8px;
+  width: 60%;
 }
 
 .main img {
   min-width: 510px;
-  min-height: 420px;
-  max-width: 590px;
-  max-height: 421px;
+  min-height: 360px;
+  max-width: 660px;
+  max-height: 361px;
   margin-right: 1px
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 40%;
   max-height: 590px;
 }
 
 .sidePhoto img {
   min-width: 210px;
-  min-height: 140px;
-  max-width: 250px;
-  max-height: 140px;
+  min-height: 120px;
+  max-width: 285px;
+  max-height: 120px;
   margin: 0 8px 0 0;
+  width: 100%;
 }
 
 .mid img {
   margin-top: 1px;
   margin-bottom: 1px;
   min-width: 210px;
-  min-height: 139px;
-  max-width: 250px;
-  max-height: 139px;
+  min-height: 121px;
+  max-width: 285px;
+  max-height: 121px;
   margin: 0 8px 0 0;
+  width: 100%;
 }

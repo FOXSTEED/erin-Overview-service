@@ -1,6 +1,6 @@
 .mainContainer {
   padding: 24px;
-  min-width: 1000px;
+  min-width: 1080px;
 }
 
 .bookPhotoContainer {
@@ -8,7 +8,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 20px 0;
-  max-width: 1285px;
+  width: 100%;
 }
 
 .bodyTitle {
