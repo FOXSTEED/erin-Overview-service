@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 
-mongoose.connect('mongodb://database/overview');
+mongoose.connect('mongodb://localhost/overview');
 
 app.use(cors());
 app.use(express.static(`${__dirname}/../client/public`));

@@ -1,13 +1,13 @@
+/* eslint-disable max-len */
 const mongoose = require('mongoose');
-const { Attraction } = require('../attraction.js');
 const faker = require('faker');
-const { calculateAverageRating, totalNumberOfReviews } = require('./helpers.js');
-const getPuppies = require('./puppy.js');
 const random = require('random-ext');
 
-mongoose.connect('mongodb://database/overview');
+const getPhotos = require('./photos');
+const { Attraction } = require('../attraction.js');
+const { calculateAverageRating, totalNumberOfReviews } = require('./helpers.js');
 
-const generateSingle = async (i) => {
+const generateSingle = (i, photos) => {
   // ratings array contains numbers of ratings per star amount as follows:
   // [5-stars, 4-stars, 3-stars, 2-stars, 1-star]
   const ratings = [random.integer(200, 0), random.integer(100, 0),
@@ -16,7 +16,6 @@ const generateSingle = async (i) => {
   const reviews = totalNumberOfReviews(ratings);
   const randomName = faker.random.words();
   const name = `${randomName} National Park`;
-  const puppies = await getPuppies();
 
   return {
     id: i,
@@ -26,10 +25,10 @@ const generateSingle = async (i) => {
     phone: faker.phone.phoneNumberFormat(),
     website: faker.internet.url(),
     email: faker.internet.email(),
-    photos: [{ url: `https://picsum.photos/590/420?image=${(i * 4) + 100}`, comment: faker.lorem.sentence(), user: faker.internet.userName() },
-      { url: `https://picsum.photos/250/140?image=${(i * 4) + 101}`, comment: faker.lorem.sentence(), user: faker.internet.userName() },
-      { url: `https://picsum.photos/250/140?image=${(i * 4) + 102}`, comment: faker.lorem.sentence(), user: faker.internet.userName() },
-      { url: `https://picsum.photos/250/140?image=${(i * 4) + 103}`, comment: faker.lorem.sentence(), user: faker.internet.userName() },
+    photos: [{ url: photos[0], comment: faker.lorem.sentence(), user: faker.internet.userName() },
+      { url: photos[1], comment: faker.lorem.sentence(), user: faker.internet.userName() },
+      { url: photos[2], comment: faker.lorem.sentence(), user: faker.internet.userName() },
+      { url: photos[3], comment: faker.lorem.sentence(), user: faker.internet.userName() },
     ],
     rating,
     ratingBreakdowns: ratings,
@@ -60,41 +59,34 @@ const generateSingle = async (i) => {
   };
 };
 
-const seedDatabase = () => {
-  const promises = [];
+const generateData = async () => {
+  const documentObjects = [];
+  const photos = await getPhotos();
+
   for (let i = 0; i < 200; i += 1) {
-    const item = generateSingle(i);
-    promises.push(item);
+    const fourPhotos = [];
+    for (let j = 0; j < 4; j += 1) {
+      fourPhotos.push(photos[random.integer(photos.length, 0)]);
+    }
+    const item = generateSingle(i, fourPhotos);
+    documentObjects.push(item);
   }
 
-  Promise.all(promises)
-    .then((data) => {
-      let count = 0;
+  return documentObjects;
+};
 
-      data.forEach((obj) => {
-        const attraction = new Attraction(obj);
-        attraction.save((err) => {
-          if (err) {
-            console.log('Error saving doc to db', err);
-          } else {
-            count += 1;
-            if (count === 199) {
-              mongoose.disconnect();
-              console.log('Saved 200 items to database!');
-            }
-          }
-        });
-      });
+const seedDatabase = () => {
+  const documentObjects = generateData();
+
+  return documentObjects.then(data => (
+    Attraction.create(data)
+  ))
+    .then(() => {
+      mongoose.disconnect();
+    })
+    .catch((err) => {
+      console.error(err);
     });
 };
 
 seedDatabase();
-
-// exports.generateSingle = generateSingle;
-
-// const test = async () => {
-//   const doc = await generateSingle(0);
-//   console.log(doc);
-// };
-
-// test();
