@@ -1,16 +1,15 @@
 .photos {
   display: flex;
   flex-direction: row;
-  min-width: 800px;
-  min-height: 420px;
-  max-width: 800px;
-  max-height: 420px;
+  width: 70%;
+  max-width: 830px;
+  min-width: 710px;
   text-align: center;
-  margin: 0 0 0 8px;
+  margin: 0 8px 0 8px;
 }
 
 .main img {
-  min-width: 590px;
+  min-width: 510px;
   min-height: 420px;
   max-width: 590px;
   max-height: 421px;
@@ -25,17 +24,19 @@
 }
 
 .sidePhoto img {
-  min-width: 250px;
+  min-width: 210px;
   min-height: 140px;
   max-width: 250px;
   max-height: 140px;
+  margin: 0 8px 0 0;
 }
 
 .mid img {
   margin-top: 1px;
   margin-bottom: 1px;
-  min-width: 250px;
+  min-width: 210px;
   min-height: 139px;
   max-width: 250px;
   max-height: 139px;
+  margin: 0 8px 0 0;
 }
