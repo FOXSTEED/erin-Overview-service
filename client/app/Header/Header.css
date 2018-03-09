@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.headName {
+  text-transform: capitalize;
+}
+
 .bubbles{
   margin-right: 3px;
   align-items: center;

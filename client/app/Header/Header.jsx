@@ -6,7 +6,7 @@ import Bubbles from '../Bubbles/Bubbles.jsx';
 
 const Header = ({ attr }) => (
   <div className={styles.topContainer}>
-    <h1>{attr.name}</h1>
+    <h1 className={styles.headName}>{attr.name}</h1>
     <div className={styles.row}>
       <div className={styles.bubbles} >
         <Bubbles rating={attr.rating} height={16} width={16} />
