@@ -21,7 +21,7 @@ class Overview extends React.Component {
   }
 
   componentDidMount() {
-    return axios.get(`http://localhost:3002/attractions/${this.props.id}/overview`)
+    return axios.get(`/listings/${this.props.id}/overview`)
       .then(res => this.setState({ data: res.data }, () => {
         this.determineIfOpen(this.state.data.opens, this.state.data.closes, new Date());
       }))

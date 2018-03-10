@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost/overview');
 
 app.use(cors());
 app.use(express.static(`${__dirname}/../client/public`));
-app.use('/listings/:id', express.static(`${__dirname}/../client/public`));
-app.use('/attractions', router);
+app.use('/:id', express.static(`${__dirname}/../client/public`));
+app.use('/listings', router);
 
 module.exports = app;

@@ -14,7 +14,8 @@
     <script>
       let url = window.location.pathname;
       url = url.split('/');
-      id = parseInt(url[url.indexOf('listings') + 1]);
+      id = parseInt(url[1]);
+      console.log(id);
 
       ReactDOM.render(
         React.createElement(Overview, {id: id}),
