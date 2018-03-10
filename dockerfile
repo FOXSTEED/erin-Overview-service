@@ -1,10 +1,10 @@
 FROM node:8.10
 
-WORKDIR /src/app
+WORKDIR /overview
 
-RUN mkdir -p /src/app
+RUN mkdir -p /overview
 
-COPY . /src/app
+COPY . /overview
 
 RUN npm install
 

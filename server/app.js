@@ -5,10 +5,10 @@ const cors = require('cors');
 
 const app = express();
 
-mongoose.connect('mongodb://database/overview');
+mongoose.connect(process.env.OVERVIEW_DATABASE_URL);
 
 app.use(cors());
-app.use(express.static(`${__dirname}/../client/public`));
+// app.use(express.static(`${__dirname}/../client/public`));
 app.use('/:id', express.static(`${__dirname}/../client/public`));
 app.use('/listings', router);
 

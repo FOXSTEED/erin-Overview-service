@@ -8,7 +8,7 @@ services:
     ports:
       - 3002:3002
     volumes:
-      - .:/usr/src/app
+      - .:/overview
 
   database:
     image: mongo

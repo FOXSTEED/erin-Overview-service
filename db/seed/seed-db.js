@@ -7,7 +7,7 @@ const getPhotos = require('./photos');
 const { Attraction } = require('../attraction.js');
 const { calculateAverageRating, totalNumberOfReviews } = require('./helpers.js');
 
-mongoose.connect('mongodb://database/overview');
+mongoose.connect(process.env.OVERVIEW_DATABASE_URL);
 
 const generateSingle = (i, photos) => {
   // ratings array contains numbers of ratings per star amount as follows:
