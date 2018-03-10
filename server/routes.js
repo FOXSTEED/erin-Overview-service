@@ -3,7 +3,7 @@ const { Attraction } = require('../db/attraction.js');
 
 const router = express.Router();
 
-router.route('/:id/overview')
+router.route('/:id')
   .get((req, res) => {
     const id = req.params.id;
     if (parseInt(id, 10) > 199) {
