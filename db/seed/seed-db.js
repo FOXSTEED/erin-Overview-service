@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
 const random = require('random-ext');
+require('dotenv').config();
 
 const getPhotos = require('./photos');
 const { Attraction } = require('../attraction.js');

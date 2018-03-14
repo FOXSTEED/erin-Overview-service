@@ -21,6 +21,7 @@
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
     "dotenv-webpack": "^1.5.5",
     "express": "^4.16.2",
     "faker": "^4.1.0",
@@ -29,7 +30,8 @@
     "random-ext": "^2.6.1",
     "random-puppy": "^1.1.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "save": "^2.3.2"
   },
   "jest": {
     "verbose": true,
