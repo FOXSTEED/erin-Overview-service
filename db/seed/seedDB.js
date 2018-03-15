@@ -10,7 +10,7 @@ seeder.connect(process.env.OVERVIEW_DATABASE_URL, () => {
     'db/seed/data/attractionModel.js',
   ]);
   // clear specific collections
-  seeder.clearModels(['Attraction'],() => {
+  seeder.clearModels(['Attraction'], () => {
     // callback to populate DB once collections have cleared
     seeder.populateModels(data, () => {
       seeder.disconnect();
