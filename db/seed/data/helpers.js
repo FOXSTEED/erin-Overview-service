@@ -1,5 +1,5 @@
 module.exports = {
-  // ratings array contains numbers of ratings per star amount as follows: 
+  // ratings array contains numbers of ratings per star amount as follows:
   // [5-stars, 4-stars, 3-stars, 2-stars, 1-star]
   calculateAverageRating: (arr) => {
     let num = 0;
