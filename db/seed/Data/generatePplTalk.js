@@ -10,9 +10,9 @@ const generatePplTalk = (i) => {
   };
 };
 
-function getNextPplTalkData(t, pageIndex) {
+function getNextPplTalkData(t, batchIndex) {
   let data = null;
-  if (pageIndex < 2000) {
+  if (batchIndex < 2000) {
     data = [];
     for (let j = 0; j < 4; j++) {
       const data2 = new Array(750);

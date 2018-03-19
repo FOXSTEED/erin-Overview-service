@@ -10,9 +10,9 @@ const generatePhotos = (i) => {
 };
 
 
-function getNextPhotoData(t, index) {
+function getNextPhotoData(t, batchIndex) {
   let data = null;
-  if (index < 1000) {
+  if (batchIndex < 1000) {
     data = [];
     for (let j = 0; j < 5; j++) {
       const data2 = new Array(1500);

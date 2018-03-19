@@ -32,9 +32,9 @@ const generateAttractions = () => {
   };
 };
 
-function getNextAttractionsData(t, pageIndex) {
+function getNextAttractionsData(t, batchIndex) {
   let data = null;
-  if (pageIndex < 1000) {
+  if (batchIndex < 1000) {
     data = new Array(1500);
     for (let i = 0; i < 1500; i++) {
       data[i] = generateAttractions();
