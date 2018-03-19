@@ -4,13 +4,13 @@ DROP TABLE IF EXISTS pplTalkAbout;
 
 CREATE TABLE attraction (
   id SERIAL PRIMARY KEY,
-  itemID integer,
-  name varchar(150) not null,
-  description varchar() not null,
-  address varchar(150) not null,
-  phone varchar(15) not null,
-  website varchar(150) not null,
-  email varchar(150) not null,
+  itemid integer,
+  username text,
+  attractiondescription text,
+  attractionaddress text,
+  phone text,
+  website text,
+  email text,
   rating integer,
   stars5 integer,
   stars4 integer,
@@ -18,25 +18,25 @@ CREATE TABLE attraction (
   stars2 integer,
   stars1 integer,
   reviews integer,
-  cityRating integer,
-  cityAttractions integer,
-  category varchar(100) not null,
+  cityrating integer,
+  cityattractions integer,
+  category text,
   opens integer,
   closes integer,
-  duration varchar(150) not null,
-)
+  duration text
+);
 
 CREATE TABLE photos (
   id SERIAL PRIMARY KEY,
-  url varchar() not null,
-  comment varchar() not null,
-  user varchar() not null,
-  attID INTEGER REFERENCES attraction (itemID),
-)
+  imageurl text,
+  comment text,
+  username text,
+  attID INTEGER REFERENCES attraction (id)
+);
 
 CREATE TABLE pplTalkAbout (
-  avatar varchar() not null,
-  phrase varchar() not null,
+  avatar text,
+  phrase text,
   mentions integer,
-  attID INTEGER REFERENCES attraction (itemID),
-)
+  attID INTEGER REFERENCES attraction (id)
+);
