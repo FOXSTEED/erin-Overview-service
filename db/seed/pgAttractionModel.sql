@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS attraction CASCADE ;
-DROP TABLE IF EXISTS photos CASCADE ;
-DROP TABLE IF EXISTS pplTalkAbout CASCADE ;
+DROP TABLE IF EXISTS attraction CASCADE;
+DROP TABLE IF EXISTS photos CASCADE;
+DROP TABLE IF EXISTS pplTalkAbout CASCADE;
 
 CREATE TABLE attraction (
   id SERIAL PRIMARY KEY,
@@ -35,6 +35,7 @@ CREATE TABLE photos (
 );
 
 CREATE TABLE pplTalkAbout (
+  id SERIAL PRIMARY KEY
   avatar text,
   phrase text,
   mentions integer,
