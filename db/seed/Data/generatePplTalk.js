@@ -25,4 +25,4 @@ function getNextPplTalkData(t, pageIndex) {
   return Promise.resolve(data);
 }
 
-module.exports = generatePplTalk;
+module.exports = getNextPplTalkData;

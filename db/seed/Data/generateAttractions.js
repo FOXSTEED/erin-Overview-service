@@ -43,4 +43,4 @@ function getNextAttractionsData(t, pageIndex) {
   return Promise.resolve(data);
 }
 
-module.exports = generateAttractions;
+module.exports = getNextAttractionsData;

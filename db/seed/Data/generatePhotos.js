@@ -25,4 +25,4 @@ function getNextPhotoData(t, index) {
   return Promise.resolve(data);
 }
 
-module.exports = generatePhotos;
+module.exports = getNextPhotoData;
