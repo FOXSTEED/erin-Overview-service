@@ -7,12 +7,10 @@ const pgp = require('pg-promise')({
 });
 
 const cn = {
-  host: '',
-  port: ,
-  database: '',
-  user: '',
-  password: '',
-}
+  host: 'localhost',
+  port: 5432,
+  database: 'Attractions',
+};
 
 const db = pgp(cn); // your database object
 
