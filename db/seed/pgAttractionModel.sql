@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS attraction;
+DROP TABLE IF EXISTS photos;
+DROP TABLE IF EXISTS pplTalkAbout;
+
 CREATE TABLE attraction (
   id SERIAL PRIMARY KEY,
   name varchar(150) not null,
@@ -7,7 +11,11 @@ CREATE TABLE attraction (
   website varchar(150) not null,
   email varchar(150) not null,
   rating integer,
-  ratingBreakdowns [Number, Number, Number, Number, Number],
+  stars5 integer,
+  stars4 integer,
+  stars3  integer,
+  stars2 integer,
+  stars1 integer,
   reviews integer,
   cityRating integer,
   cityAttractions integer,
@@ -25,17 +33,7 @@ CREATE TABLE photos (
   attID INTEGER REFERENCES attraction (id),
 )
 
-CREATE TABLE ratingBreakdowns (
- id SERIAL PRIMARY Key,
- stars5 integer,
- stars4 integer,
- stars3  integer,
- stars2 integer,
- stars1 integer,
- attID INTEGER REFERENCES attraction (id),
-)
-
-CREATE TABLE PplTalkAbout (
+CREATE TABLE pplTalkAbout (
   avatar varchar() not null,
   phrase varchar() not null,
   mentions integer,
