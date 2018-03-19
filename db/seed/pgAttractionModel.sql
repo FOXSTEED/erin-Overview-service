@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS pplTalkAbout;
 
 CREATE TABLE attraction (
   id SERIAL PRIMARY KEY,
+  itemID integer,
   name varchar(150) not null,
   description varchar() not null,
   address varchar(150) not null,
@@ -30,12 +31,12 @@ CREATE TABLE photos (
   url varchar() not null,
   comment varchar() not null,
   user varchar() not null,
-  attID INTEGER REFERENCES attraction (id),
+  attID INTEGER REFERENCES attraction (itemID),
 )
 
 CREATE TABLE pplTalkAbout (
   avatar varchar() not null,
   phrase varchar() not null,
   mentions integer,
-  attID INTEGER REFERENCES attraction (id),
+  attID INTEGER REFERENCES attraction (itemID),
 )
