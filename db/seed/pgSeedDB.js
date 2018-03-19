@@ -9,7 +9,7 @@ const pgp = require('pg-promise')({
 const conection = {
   host: 'localhost',
   port: 5432,
-  database: 'Attractions',
+  database: 'overview',
 };
 
 const db = pgp(conection); // your database object
