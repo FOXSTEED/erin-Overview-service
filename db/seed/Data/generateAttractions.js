@@ -35,8 +35,8 @@ const generateAttractions = () => {
 function getNextAttractionsData(t, pageIndex) {
   let data = null;
   if (pageIndex < 1000) {
-    data = new Array(1000);
-    for (let i = 0; i < 1000; i++) {
+    data = new Array(1500);
+    for (let i = 0; i < 1500; i++) {
       data[i] = generateAttractions();
     }
   }

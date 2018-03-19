@@ -10,14 +10,16 @@ const generatePhotos = (i) => {
 };
 
 
-function getNextPhotoData(t, pageIndex) {
+function getNextPhotoData(t, index) {
   let data = null;
-  if (pageIndex < 1000) {
-    data = new Array(1000);
+  if (index < 1000) {
+    data = [];
     for (let j = 0; j < 5; j++) {
-      for (let i = 0; i < 250; i++) {
-        data[i] = generatePhotos();
+      const data2 = new Array(1500);
+      for (let i = 0; i < 1500; i++) {
+        data2[i] = generatePhotos(i);
       }
+      data.concat(data2);
     }
   }
   return Promise.resolve(data);
