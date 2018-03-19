@@ -1,7 +1,7 @@
 const faker = require('faker');
 const random = require('random-ext');
 
-const { calculateAverageRating, totalNumberOfReviews } = require('./helpers.js');
+const { calculateAverageRating, totalNumberOfReviews } = require('../helpers');
 
 const generateAttractions = (i) => {
   const ratings = [random.integer(200, 0), random.integer(100, 0),
