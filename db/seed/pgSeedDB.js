@@ -6,13 +6,13 @@ const pgp = require('pg-promise')({
   capSQL: true // generate capitalized SQL 
 });
 
-const cn = {
+const conection = {
   host: 'localhost',
   port: 5432,
   database: 'Attractions',
 };
 
-const db = pgp(cn); // your database object
+const db = pgp(conection); // your database object
 
 // Creating a reusable/static ColumnSet for generating INSERT queries:
 const csAttractions = new pgp.helpers.ColumnSet([
