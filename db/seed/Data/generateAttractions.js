@@ -12,8 +12,8 @@ const generateAttractions = (i) => {
   const name = `${randomName} National Park`;
 
   return {
-    username: name,
     itemid: i,
+    attractionname: name,
     attractiondescription: faker.lorem.sentences(),
     attractionaddress: faker.fake('{{address.streetAddress}}, {{address.city}}, {{address.state}}, {{address.country}}'),
     phone: faker.phone.phoneNumberFormat(),

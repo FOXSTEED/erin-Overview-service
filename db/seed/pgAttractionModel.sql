@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS pplTalkAbout CASCADE;
 CREATE TABLE attraction (
   id SERIAL PRIMARY KEY,
   itemid integer UNIQUE,
-  username text,
+  attractioname text,
   attractiondescription text,
   attractionaddress text,
   phone text,

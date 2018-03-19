@@ -16,10 +16,10 @@ const db = pgp(conection); // your database object
 
 // Creating a reusable/static ColumnSet for generating INSERT queries:
 const csAttractions = new pgp.helpers.ColumnSet([
-  'id',
-  'name',
-  'description',
-  'address',
+  'itemid',
+  'attractionname',
+  'attractiondescription',
+  'attractionaddress',
   'phone',
   'website',
   'email',
@@ -30,8 +30,8 @@ const csAttractions = new pgp.helpers.ColumnSet([
   'stars2',
   'stars1',
   'reviews',
-  'cityRating',
-  'cityAttractions',
+  'cityrating',
+  'cityattractions',
   'category',
   'opens',
   'closes',
