@@ -78,10 +78,10 @@ db.tx('massive-insert', (t) => {
 // Photo Table
 db.tx('massive-insert', (t) => {
   return t.sequence((index) => {
-    return getNextAttractionsData(t, index)
+    return getNextPhotoData(t, index)
       .then((data) => {
         if (data) {
-          const insert = pgp.helpers.insert(data, csAttractions);
+          const insert = pgp.helpers.insert(data, csPhotos);
           return t.none(insert);
         }
       });
@@ -99,10 +99,10 @@ db.tx('massive-insert', (t) => {
 // PplTalk table
 db.tx('massive-insert', (t) => {
   return t.sequence((index) => {
-    return getNextAttractionsData(t, index)
+    return getNextPplTalkData(t, index)
       .then((data) => {
         if (data) {
-          const insert = pgp.helpers.insert(data, csAttractions);
+          const insert = pgp.helpers.insert(data, csPplTalkAbout);
           return t.none(insert);
         }
       });
