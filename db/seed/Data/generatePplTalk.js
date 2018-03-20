@@ -14,10 +14,11 @@ function getNextPplTalkData(t, batchIndex) {
   let data = null;
   if (batchIndex < 2000) {
     data = [];
-    for (let j = 0; j < 4; j++) {
-      const data2 = new Array(750);
-      for (let i = 0; i < 750; i++) {
-        data2[i] = generatePplTalk(i);
+    const itemIndex = batchIndex * 2000;
+    for (let j = 0; j < 3; j++) {
+      const data2 = new Array(2000);
+      for (let i = 0; i < 2000; i++) {
+        data2[i] = generatePplTalk(i + 1 + itemIndex);
       }
       data.concat(data2);
     }

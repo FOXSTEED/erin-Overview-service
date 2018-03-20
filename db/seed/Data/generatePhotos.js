@@ -2,9 +2,9 @@ const faker = require('faker');
 
 const generatePhotos = (i) => {
   return {
-    url: faker.image.nightlife(),
+    imageurl: faker.image.nightlife(),
     comment: faker.lorem.sentence(),
-    user: faker.internet.userName(),
+    username: faker.internet.userName(),
     attID: i,
   };
 };
@@ -12,12 +12,13 @@ const generatePhotos = (i) => {
 
 function getNextPhotoData(t, batchIndex) {
   let data = null;
-  if (batchIndex < 1000) {
+  if (batchIndex < 2000) {
     data = [];
-    for (let j = 0; j < 5; j++) {
-      const data2 = new Array(1500);
-      for (let i = 0; i < 1500; i++) {
-        data2[i] = generatePhotos(i);
+    const itemIndex = batchIndex * 2000;
+    for (let j = 0; j < 3; j++) {
+      const data2 = new Array(2000);
+      for (let i = 0; i < 2000; i++) {
+        data2[i] = generatePhotos(i + 1 + itemIndex);
       }
       data.concat(data2);
     }
