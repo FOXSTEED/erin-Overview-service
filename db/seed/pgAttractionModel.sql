@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS attraction CASCADE;
+DROP TABLE IF EXISTS attractions CASCADE;
 DROP TABLE IF EXISTS photos CASCADE;
 DROP TABLE IF EXISTS pplTalkAbout CASCADE;
 
-CREATE TABLE attraction (
+CREATE TABLE attractions (
   id SERIAL PRIMARY KEY,
   itemid integer UNIQUE,
-  attractioname text,
+  attractionname text,
   attractiondescription text,
   attractionaddress text,
   phone text,
@@ -31,13 +31,13 @@ CREATE TABLE photos (
   imageurl text,
   comment text,
   username text,
-  attID INTEGER REFERENCES attraction(itemid)
+  attID INTEGER REFERENCES attractions(itemid)
 );
 
 CREATE TABLE pplTalkAbout (
-  id SERIAL PRIMARY KEY
+  id SERIAL PRIMARY KEY,
   avatar text,
   phrase text,
   mentions integer,
-  attID INTEGER REFERENCES attraction(itemid)
+  attID INTEGER REFERENCES attractions(itemid)
 );

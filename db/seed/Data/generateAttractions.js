@@ -37,10 +37,11 @@ const generateAttractions = (i) => {
 
 function getNextAttractionsData(t, batchIndex) {
   let data = null;
-  if (batchIndex < 1000) {
-    data = new Array(1500);
-    for (let i = 0; i < 1500; i++) {
-      data[i] = generateAttractions((i + 1) * batchIndex);
+  if (batchIndex < 2000) {
+    const itemIndex = batchIndex * 5000;
+    data = new Array(5000);
+    for (let i = 0; i < 5000; i++) {
+      data[i] = generateAttractions(i + 1 + itemIndex);
     }
   }
   return Promise.resolve(data);
