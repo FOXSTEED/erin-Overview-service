@@ -31,7 +31,7 @@ CREATE TABLE photos (
   imageurl text,
   comment text,
   username text,
-  attID INTEGER REFERENCES attractions(itemid)
+  attid INTEGER REFERENCES attractions(itemid)
 );
 
 CREATE TABLE pplTalkAbout (
@@ -39,5 +39,5 @@ CREATE TABLE pplTalkAbout (
   avatar text,
   phrase text,
   mentions integer,
-  attID INTEGER REFERENCES attractions(itemid)
+  attid INTEGER REFERENCES attractions(itemid)
 );

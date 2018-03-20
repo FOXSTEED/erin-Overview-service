@@ -5,25 +5,21 @@ const generatePhotos = (i) => {
     imageurl: faker.image.nightlife(),
     comment: faker.lorem.sentence(),
     username: faker.internet.userName(),
-    attID: i,
+    attid: i,
   };
 };
 
 
-function getNextPhotoData(t, batchIndex) {
+function getNextPhotosData(t, batchIndex) {
   let data = null;
   if (batchIndex < 2000) {
-    data = [];
-    const itemIndex = batchIndex * 2000;
-    for (let j = 0; j < 3; j++) {
-      const data2 = new Array(2000);
-      for (let i = 0; i < 2000; i++) {
-        data2[i] = generatePhotos(i + 1 + itemIndex);
-      }
-      data.concat(data2);
+    const itemIndex = batchIndex * 5000;
+    data = new Array(5000);
+    for (let i = 0; i < 5000; i++) {
+      data[i] = generatePhotos(i + 1 + itemIndex);
     }
   }
   return Promise.resolve(data);
 }
 
-module.exports = getNextPhotoData;
+module.exports = getNextPhotosData;
