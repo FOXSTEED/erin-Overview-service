@@ -54,7 +54,7 @@ const csPplTalkAbout = new pgp.helpers.ColumnSet([
   'attid',
 ], { table: 'ppltalkabout' });
 
-//Attraction Table
+// Attraction Table
 db.tx('massive-insert', (t) => {
   return t.sequence((index) => {
     return getNextAttractionsData(t, index)
@@ -70,44 +70,36 @@ db.tx('massive-insert', (t) => {
     // COMMIT has been executed
     console.log('Total Attractions batches:', data.total, ', Duration:', data.duration);
   })
-  .catch((error) => {
-    // ROLLBACK has been executed
-    console.log(error);
-  });
 
-// Photo Table
-db.tx('massive-insert', (t) => {
-  return t.sequence((index) => {
-    return getNextPhotosData(t, index)
-      .then((data) => {
-        if (data) {
-          const insert = pgp.helpers.insert(data, csPhotos);
-          return t.none(insert);
-        }
-      });
-  });
-})
+  // Photo Table
+  .then(db.tx('massive-insert', (t) => {
+    return t.sequence((index) => {
+      return getNextPhotosData(t, index)
+        .then((data) => {
+          if (data) {
+            const insert = pgp.helpers.insert(data, csPhotos);
+            return t.none(insert);
+          }
+        });
+    });
+  }))
   .then((data) => {
     // COMMIT has been executed
     console.log('Total Photo batches:', data.total, ', Duration:', data.duration);
   })
-  .catch((error) => {
-    // ROLLBACK has been executed
-    console.log(error);
-  });
-
-// PplTalk table
-db.tx('massive-insert', (t) => {
-  return t.sequence((index) => {
-    return getNextPplTalkData(t, index)
-      .then((data) => {
-        if (data) {
-          const insert = pgp.helpers.insert(data, csPplTalkAbout);
-          return t.none(insert);
-        }
-      });
-  });
-})
+  
+  // PplTalk table
+  .then(db.tx('massive-insert', (t) => {
+    return t.sequence((index) => {
+      return getNextPplTalkData(t, index)
+        .then((data) => {
+          if (data) {
+            const insert = pgp.helpers.insert(data, csPplTalkAbout);
+            return t.none(insert);
+          }
+        });
+    });
+  }))
   .then((data) => {
     // COMMIT has been executed
     console.log('Total PplTalk batches:', data.total, ', Duration:', data.duration);
