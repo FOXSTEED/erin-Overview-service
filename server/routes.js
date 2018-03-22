@@ -1,5 +1,5 @@
 const express = require('express');
-const { Attraction } = require('../db/attraction.js');
+const { Attraction } = require('../db/seed/mongoDB/mgAttractionModel');
 
 const router = express.Router();
 
