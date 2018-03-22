@@ -23,5 +23,4 @@ const attrSchema = mongoose.Schema({
 
 const Attraction = mongoose.model('Attraction', attrSchema);
 
-exports.Attraction = Attraction;
-exports.attrSchema = attrSchema;
+module.exports = Attraction;
