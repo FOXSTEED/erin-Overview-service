@@ -13,6 +13,7 @@
     "start": "npm run seed && npm run build && node server/index.js ",
     "start-dev": "nodemon server/index.js",
     "seed": "node db/seed/seed-db.js",
+    "seedDB": "node db/seed/pgseedDB.js",
     "test": "jest --forceExit",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
@@ -26,6 +27,7 @@
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "mongoose": "^5.0.6",
+    "pg-promise": "^8.2.2",
     "prop-types": "^15.6.1",
     "random-ext": "^2.6.1",
     "random-puppy": "^1.1.0",
