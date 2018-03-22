@@ -12,7 +12,7 @@ const generatePhotos = (i) => {
 
 function getNextPhotosData(t, batchIndex) {
   let data = null;
-  if (batchIndex < 2000) {
+  if (batchIndex < 4000) {
     const itemIndex = batchIndex * 5000;
     data = new Array(5000);
     for (let i = 0; i < 5000; i++) {

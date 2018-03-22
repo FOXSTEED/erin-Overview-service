@@ -12,7 +12,7 @@ const generatePplTalk = (i) => {
 
 function getNextPplTalkData(t, batchIndex) {
   let data = null;
-  if (batchIndex < 2000) {
+  if (batchIndex < 4000) {
     data = [];
     const itemIndex = batchIndex * 5000;
     data = new Array(5000);
