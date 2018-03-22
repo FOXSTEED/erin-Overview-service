@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS attractions CASCADE;
 DROP TABLE IF EXISTS photos CASCADE;
-DROP TABLE IF EXISTS pplTalkAbout CASCADE;
+DROP TABLE IF EXISTS ppltalkabout CASCADE;
 
 CREATE TABLE attractions (
   id SERIAL PRIMARY KEY,
@@ -34,10 +34,14 @@ CREATE TABLE photos (
   attid INTEGER REFERENCES attractions(itemid)
 );
 
-CREATE TABLE pplTalkAbout (
+CREATE INDEX attid2_idx ON photos USING hash (attid);
+
+CREATE TABLE ppltalkabout (
   id SERIAL PRIMARY KEY,
   avatar text,
   phrase text,
   mentions integer,
   attid INTEGER REFERENCES attractions(itemid)
 );
+
+CREATE INDEX attid3_idx ON ppltalkabout USING hash (attid);
