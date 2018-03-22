@@ -20,7 +20,6 @@ if (cluster.isMaster) {
     console.log(`worker ${worker.process.pid} finished`);
   });
 } else {
-
   process.on('message', (id) => {
     seedDB(id);
     console.log(`Worker ${process.pid} started`);
@@ -33,18 +32,17 @@ function seedDB(baseID) {
     const db = client.db('overview');
     const collection = db.collection('attractions');
 
-    let count = parseInt(10000000 / numCPUs);
     const size = 1000;
     let indexStart = baseID;
-    async function insertBulkArray() {
+    async function insertBulkArray(numBulkArryCalls) {
       try {
         const ops = _.range(0, size).map((id) => {
           return { insertOne: { document: { ...dataObj, id: indexStart + id } } };
         });
         await collection.bulkWrite(ops, { ordered: false });
-        count -= size;
+        numBulkArryCalls -= size;
         indexStart += size;
-        if (count > 0) {
+        if (numBulkArryCalls > 0) {
           insertBulkArray();
         } else {
           // close mongodb connection
@@ -56,7 +54,7 @@ function seedDB(baseID) {
         console.log('Seed Error: ', err);
       }
     }
-    insertBulkArray();
+    insertBulkArray(base);
   });
 }
 
