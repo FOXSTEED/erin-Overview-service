@@ -1,6 +1,6 @@
-const getNextPhotosData = require('./Data/generatePhotos');
-const getNextAttractionsData = require('./Data/generateAttractions');
-const getNextPplTalkData = require('./Data/generatePplTalk');
+const getNextPhotosData = require('./generatePhotos');
+const getNextAttractionsData = require('./generateAttractions');
+const getNextPplTalkData = require('./generatePplTalk');
 
 const pgp = require('pg-promise')({
   capSQL: true, // generate capitalized SQL
