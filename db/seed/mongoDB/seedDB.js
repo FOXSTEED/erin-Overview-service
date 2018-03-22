@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient;
 const _ = require('ramda');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
-const dataObj = require('./data/attraction');
+const dataObj = require('./attraction');
 
 const base = parseInt(10000000 / numCPUs);
 
