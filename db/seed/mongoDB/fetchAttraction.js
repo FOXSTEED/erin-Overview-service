@@ -12,7 +12,7 @@ const fetchAttraction = (id, callback) => {
     if (err) {
       console.log('ERROR - Fetching Data', err);
     }
-    console.log('SUCESS - found!');
+    console.log('SUCESS - Found Data!');
     callback(doc);
   });
 };
