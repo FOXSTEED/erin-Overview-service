@@ -19,6 +19,7 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "artillery": "^1.6.0-14",
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "cluster": "^0.7.7",
