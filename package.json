@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "webpack -d --watch",
     "build": "webpack -d",
-    "start": "npm run seed && npm run build && node server/index.js ",
+    "start": "npm run build && node server/index.js ",
     "start-dev": "nodemon server/index.js",
     "seed": "node db/seed/mongoDB/seedDB.js",
     "seedDB": "node db/seed/pgseedDB.js",
