@@ -1,5 +1,6 @@
 ## MAC files ##
 .DS_Store
+.vscode
 
 ## NPM ##
 npm
@@ -26,3 +27,4 @@ dist/
 bundle.js
 .env
 newrelic.js
+newrelic_plugin.yml
