@@ -64,7 +64,6 @@ Next Configure and run the app:
 npm start
 ```
 
-## Acknologments
-- @zinoki for creating the base proxy server for this project. 
-- @emsando for creating the front end for the overview-service.
-
+## Acknowledgements
+- [@zinoki](https://github.com/zinoki) for creating the base proxy server for this project. 
+- [@emsando](https://github.com/emsando) for creating the front end for the overview-service.
