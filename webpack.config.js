@@ -1,8 +1,10 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
+
 
 const BUILD_DIR = path.resolve(__dirname, 'client/public');
-const APP_DIR = path.resolve(__dirname, 'client/app');
+const APP_DIR = path.resolve(__dirname, 'client');
 
 const config = {
   module: {
