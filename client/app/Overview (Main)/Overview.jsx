@@ -8,7 +8,7 @@ import Bookings from '../Bookings/Bookings.jsx';
 import Photos from '../Photos/Photos.jsx';
 import Body from '../Body/Body.jsx';
 
-class Overview extends React.Component {
+export default class Overview extends React.Component {
   constructor(props) {
     super(props);
 
@@ -74,5 +74,3 @@ Overview.propTypes = {
   id: PropTypes.number.isRequired,
 };
 
-window.Overview = Overview;
-export default Overview;
