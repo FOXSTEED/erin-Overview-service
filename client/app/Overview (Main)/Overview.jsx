@@ -26,7 +26,7 @@ export default class Overview extends React.Component {
         console.log('This is your data: ',this.state.data)
         this.determineIfOpen(this.state.data.opens, this.state.data.closes, new Date());
       }))
-      .catch(err => console.log('get Req Error: ',err));
+      .catch(err => console.log('get Req Error: ', err));
   }
 
   determineIfOpen(opens, closes, date) {
