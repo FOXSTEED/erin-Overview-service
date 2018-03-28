@@ -34,20 +34,20 @@ const config = {
 };
 
 const client = {
-  entry: `${APP_DIR}/Overview (Main)/Overview.jsx`,
+  entry: `${APP_DIR}/client.js`,
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js',
+    filename: 'Overview-client.js',
   },
 };
 
 const server = {
   // will need to change this one
-  entry: `${APP_DIR}/Overview (Main)/Overview.jsx`,
+  entry: `${APP_DIR}/server.js`,
   target: 'node',
   output: {
     path: BUILD_DIR,
-    filename: 'bundle-server.js',
+    filename: 'Overview-server.js',
     libraryTarget: 'commonjs-module',
   },
 };
