@@ -51,6 +51,7 @@ const server = {
     libraryTarget: 'commonjs-module',
   },
 };
+
 module.exports = [
   Object.assign({}, config, client),
   Object.assign({}, config, server),
