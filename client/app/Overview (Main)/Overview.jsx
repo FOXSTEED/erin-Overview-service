@@ -8,7 +8,7 @@ import Bookings from '../Bookings/Bookings.jsx';
 import Photos from '../Photos/Photos.jsx';
 import Body from '../Body/Body.jsx';
 
-class Overview extends React.Component {
+export default class Overview extends React.Component {
   constructor(props) {
     super(props);
 
@@ -23,10 +23,10 @@ class Overview extends React.Component {
   componentDidMount() {
     return axios.get(`${window.location.origin}/overview/${this.props.id}`)
       .then(res => this.setState({ data: res.data }, () => {
-        console.log('This is your data: ',this.state.data)
+        console.log('This is your data: ', this.state.data)
         this.determineIfOpen(this.state.data.opens, this.state.data.closes, new Date());
       }))
-      .catch(err => console.log('get Req Error: ',err));
+      .catch(err => console.log('get Req Error: ', err));
   }
 
   determineIfOpen(opens, closes, date) {
@@ -74,5 +74,3 @@ Overview.propTypes = {
   id: PropTypes.number.isRequired,
 };
 
-window.Overview = Overview;
-export default Overview;

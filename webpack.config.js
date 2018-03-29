@@ -1,11 +1,12 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+// const webpack = require('webpack');
+
 
 const BUILD_DIR = path.resolve(__dirname, 'client/public');
-const APP_DIR = path.resolve(__dirname, 'client/app');
+const APP_DIR = path.resolve(__dirname, 'client');
 
 const config = {
-  entry: `${APP_DIR}/Overview (Main)/Overview.jsx`,
   module: {
     loaders: [
       {
@@ -32,10 +33,29 @@ const config = {
   plugins: [
     new Dotenv(),
   ],
+};
+
+const client = {
+  entry: `${APP_DIR}/client.js`,
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js',
+    filename: 'Overview-client.js',
   },
 };
 
-module.exports = config;
+const server = {
+  // will need to change this one
+  entry: `${APP_DIR}/server.js`,
+  target: 'node',
+  output: {
+    path: BUILD_DIR,
+    filename: 'Overview-server.js',
+    libraryTarget: 'commonjs-module',
+  },
+};
+
+module.exports = [
+  Object.assign({}, config, client),
+  Object.assign({}, config, server),
+];
+

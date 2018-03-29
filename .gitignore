@@ -24,7 +24,8 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 dist/
-bundle.js
+Overview-client.js
+Overview-server.js
 .env
 newrelic.js
 newrelic_plugin.yml
