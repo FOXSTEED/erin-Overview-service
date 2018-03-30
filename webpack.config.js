@@ -39,7 +39,7 @@ const client = {
   entry: `${APP_DIR}/client.js`,
   output: {
     path: BUILD_DIR,
-    filename: 'Overview-client.js',
+    filename: 'app.js',
   },
 };
 
@@ -49,7 +49,7 @@ const server = {
   target: 'node',
   output: {
     path: BUILD_DIR,
-    filename: 'Overview-server.js',
+    filename: 'app-server.js',
     libraryTarget: 'commonjs-module',
   },
 };
