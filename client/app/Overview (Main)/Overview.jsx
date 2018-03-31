@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-import styles from './Overview.css';
 import Header from '../Header/Header.jsx';
 import Bookings from '../Bookings/Bookings.jsx';
 import Photos from '../Photos/Photos.jsx';
