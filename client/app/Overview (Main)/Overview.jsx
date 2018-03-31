@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+import styles from './Overview.css';
 import Header from '../Header/Header.jsx';
 import Bookings from '../Bookings/Bookings.jsx';
 import Photos from '../Photos/Photos.jsx';
@@ -20,9 +21,9 @@ export default class Overview extends React.Component {
   }
 
   componentDidMount() {
-    return axios.get(`${window.location.origin}/overview/${this.props.id}`)
+    return axios.get(`http://localhost:3002/overview/${this.props.id}`)
       .then(res => this.setState({ data: res.data }, () => {
-        console.log('This is your data: ', this.state.data)
+        console.log('This is your data: ', this.state.data);
         this.determineIfOpen(this.state.data.opens, this.state.data.closes, new Date());
       }))
       .catch(err => console.log('get Req Error: ', err));
