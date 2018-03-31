@@ -1,6 +1,6 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
-// const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 const BUILD_DIR = path.resolve(__dirname, 'client/public');
@@ -19,19 +19,25 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader',
-      }, {
-        test: /\.css$/,
-        loader: 'css-loader',
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]',
-        },
+        exclude: /node_modules/,
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:5]' })
       },
+      // {
+      //   test: /\.css$/,
+      //   loader: 'style-loader',
+      // }, {
+      //   test: /\.css$/,
+      //   loader: 'css-loader',
+      //   query: {
+      //     modules: true,
+      //     localIdentName: '[name]__[local]___[hash:base64:5]',
+      //   },
+      // },
     ],
   },
   plugins: [
     new Dotenv(),
+    new ExtractTextPlugin('styles.css'),
   ],
 };
 

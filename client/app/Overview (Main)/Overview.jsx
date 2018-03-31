@@ -23,6 +23,7 @@ export default class Overview extends React.Component {
   componentDidMount() {
     return axios.get(`http://localhost:3002/overview/${this.props.id}`)
       .then(res => this.setState({ data: res.data }, () => {
+        console.log('this is your propsID: ', this.props.id);
         console.log('This is your data: ', this.state.data);
         this.determineIfOpen(this.state.data.opens, this.state.data.closes, new Date());
       }))

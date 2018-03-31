@@ -5,12 +5,12 @@ const router = express.Router();
 
 router.route('/:id')
   .get((req, res) => {
+    console.log('inside the route id: ', req.params.id);
     const id = parseInt(req.params.id, 10);
     // if (parseInt(id, 10) > 199) {
     //   res.sendStatus(404);
     // }
     fetchAttraction(id, (doc, err) => {
-
       if (err) {
         console.log('ERR accessing doc from db', err);
         res.sendStatus(500);
